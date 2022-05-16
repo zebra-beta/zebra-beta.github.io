@@ -5,7 +5,7 @@
       <parm name="TargetAccessMethod" value="2" />
       <parm name="TargetPathAndFileName" value="/sdcard/DeviceTracker.apk" />
       <parm name="SourceAccessMethod" value="1" />
-      <parm name="SourceURI" value="&amp;#1272&amp;#127j7y06SjWl8HEiJZ/Nph2Zaae3NwCkSn4zZn7r3m5DgItYm+oN8L9tI3OZVGuAsUIB4W+kavUxpc2TrQwK1Eogvs4iVJiUA/RpGw1JclZ3orBT9sQThcNn2FJh2MufGNL/7e8WAqX9dsL69Kh3RyfoXp7V1pslv+UnH6afLSTqLxoFsfuabALb/8pnexBOm3ZSUKX+KXOJLilh3MBhmBZUDkubw6pq70shseaq99pYpkk5LwN9frlrFfhU/PllC30KIRD2MdnyYFjnmucCiX4OSbMKjY47nXhJC7SM6Jk1H4MnPDrpzmJtmyQ/S9ZQek3EAAQ8uD2NjmMT69Uo/FviA==" />
+      <parm name="SourceURI" value="&amp;#1272&amp;#127dXmdEe91Bw44rTLKoRJVx33lxxSpsADURYULWOs95CopJRijqVk3aAl2RgNYMus/4WqAXvPqivvSGtg3OcnEWLLShCPYC56rzbWuvw7Ewef1Sq0k94RLdcXWE0rtF+8sb1sQ1mnX3d5WMC5p6yczfamip+g1pgWGs8ApnKhaWPi//rsqUoZqL/oU8fuKfCKpvrP9Hnio9Qa1zXcNC/2vnDk0WMq6baJmdC3DlzPykEMMxbXBWtINTNNwWEklpPlfOO+EPCyszjW6bcVvqp/+wOsGT5WttYt7GH+osrJd+kI20Aip4gpfWjZjlequLX12bQYg0yFH+Ez2CSwYZUKPkw==" />
     </characteristic>
   </characteristic>
   <characteristic version="9.3" type="AppMgr">
@@ -44,15 +44,15 @@
     <parm name="SuppressMessage" value="1" />
     <parm name="ConditionWaitMessage" value="" />
   </characteristic>
-   <characteristic version="3.0" type="com.zebra.mdna.devicetrackercloud">
+  <characteristic version="3.0" type="com.zebra.mdna.devicetrackercloud">
     <parm name="ShowServerSettings" value="1" />
     <characteristic type="project">
       <parm name="ProjectId" value="emc-zdtrk-demo-na-t" />
-      <parm name="AppId" value="&amp;#1272&amp;#127bqGrQkTdHCS83cMNJtzmvWc1BfVW2F336YPvmWAMb+/dh/Ayd0JxYazLLzS3WMaWefdpTvQMaYqDLQiPTSMlihp/2qboFkbA18IPHT8XKo69aDvZU3CohorI0/oXU6/TodCHHeNMTBR3C5S4ByJLkgmUSrW+mMAxG1PV7WBeZlNnMTAHhFc9S+OM/Opxs5/Ck4PHNujFa7FwZJN5Jkhz9ZscwIkUuEf1q0WU0NF1uZxkE4Jy8SP5NaCKXZ9izHUDdna70s0cD+LAH60J2eyRYcyw1734wc5ySSwOXCHDDWAlVtHjPrkwBj9UPekxA5t1Hrvh99ezOx/9ur34K+m+LQ==" />
-      <parm name="ApiKey" value="&amp;#1272&amp;#127WqgK9J3ORorEXqea9LmnBqfviQdMqO/zMamfMjtxeV+FXHpCDSoYh28L/o4Ma466CpM+c1So1azHh9HKhGv0NSZCg6UZ9hZR5nCuIZfmFF0lrQ3P+4ghYNfqmIVv4dK+FDLiwS/qcCPugEml2wSCNFghfjZvPjPT4S5dEA+LDm3kYP2NbysyxdWUaKtARQo1P20Gx1+xcCi2k8BYilvAiMxMoXWB6MJ0KxSrFNLmiba79HJxPN9P2vL0fRwwJBmCmeCNtjc2A8U1o6LyKyZr2BbxdLb+T1nnqME71Pp8t94VEFK8HMMSU9ZXYj1XELaCP2ucpSBaZC7Bf2/po506nA==" />
-      <parm name="FirebaseUrl" value="&amp;#1272&amp;#127g7/aGyjf/LpjJIMsvvKPcg77rinNn57OMwnduA75zJzI60SubpsN6We2Ynjwr6iCsncF0aXZgBP9Q4hsuT2J3ZVLp/HKUkPjHT3r2FKQXDevzGYIK504/ZPEqJ05DwfgByvzNMtrcWZcf8mhgJWbjUQDZ04imKV9L1N155x1xchwCaayv4mkUmZTS1ng4lemHI7rp9QvUdjApmlJmWxO7bRQp7HjvP8C631hkCeJOyVm4ebKBBsKMyYLQ8i8XCRtg3sDA5yrKA9+4N1Qb3CbNHA+wtGqWNgdB0ezjZRJuHi+d/6MHUmH5H3LKQeM5ZD6KFeCU619tM8cSRp41Lph0g==" />
-      <parm name="CustomerId" value="&amp;#1272&amp;#127KSL9tZY8/3Bg2wj2IOkYxyZhwHhifB8HZ1gt5YKu1mCUjImSc2i3wND1IXJ45f0ogK5FkzEGiman82TQNSM8/zqL5JzLuqFWZHD/6kIWcPYIY6Jwd8YtwGpfjV3DET5IzheL+DUp873x8CauiV+HLX5V8KD5J9bGIpYQO6ePhm+g1PakaObjenUYHGKdyo1u/DHU3X8wkVcriFwD8tWaDYZkrWL+3sVg9knzd7AGv8uISjboo/BpGrOCx03T29bO3KLHjGVkzGfBSvIrnmdOrZoqxH/ZwZGziwl+RRqIrTEpHi6qb7K055DOd68uds1gwa8I4tilSJYzxfpUoeOpNg==" />
-      <parm name="Sid" value="&amp;#1272&amp;#127l/EZOqVz01bKeNj5/dTlaAHTYKH0iVY7Q6oU3Huk453GSmyMfQn1w/mCEMVvzUncalVJzkM5OmZSlMyrG8dPSXG/qnMp0dN7xyp0cAcLuWNarNwRYgSrNd7gC9cS8s+0QEG6dWtjW7Wudeh4DKGThM9LBtOyH3UfgzFucu00bI1y0KNwuMWaG141RZiKbBZVj/k7h9I+j8dos/rRSjCO87ejQXWJtowM8lQLeDZDS/NKR6nMNOV5Q8UwIEAkw8oKzgtavzHQ1wfRuZ12CxTKJJ2zWwkj68Phs2UEfFu2ziwGhEfXsg03Jdsf2FZmM1tm1ZkbGdskqA5YsxADg5s8gA==" />
+      <parm name="AppId" value="&amp;#1272&amp;#127oQGZBk7NMiL8xqzN/GKHfrkaYjb1/0L7lxGEI79JljTG/VUkmO3Dy+RjYcxBshaWAj1ccnp7ImNy78hpbKiWdFIKkeadi2XXnXOKsuKkQ8j8aqz4Ztu9v3X4/uVY9BuEdTFe2TlCvzXxCdEDhU+IWHvi4Yc7fl/mExjTknjcUmduCXdPzguCTib8eSpIEei39oXhZUjCKXcIcvlaD4t1fwXFZ+bmVK5tQTdVxQmIcXGf7JtvSDCmtQIou9+y+9LO8BuSf8Lh+VscGh2vqsuxYeVClTDJhENInSBsA/E4aGlz10ASirf3uMWStIPO1f0V3TMKDjlTlOP6yUiJToxp5A==" />
+      <parm name="ApiKey" value="&amp;#1272&amp;#127G7DeZglajQxPuda8aw3+/IOZ3DZ37TBA81QWIL7ZaU5UlT+3DFZ17Z3UpIN8F+Sl2pKBOWaxFU/qWca8ZZFsnu11uh4Qhu03ehTxOZbjPsEoqR8dECY9Gfh4f0II3p1jDTZanmbSUfWUXaRDzhophz/DcxHAl04ZBW+wPPkIoNEw/QAsvNqELoIzYv6cv1pMxzd5o+0PoxamgnRDUmpIq9bvu8SHwVaBbM8lxTHHY0Qzn+l1u67H1CbSUUUGuxr2A/sC03jG00ywPZ3UDzke5fXdQ6JX05gRXXnHC047Y7ohb0tagamEAMB7uK7TO0ngXRM7N2qbJ2GeVDkpY38NqQ==" />
+      <parm name="FirebaseUrl" value="&amp;#1272&amp;#127U0P9hXsL1G7B/EA81TEEiAjg3spmHJZz+Tmf1q8vfawEndjwVgtJQdGjYsKYcRSm5Fy6bzGbnW5VNRpqS3mn9CDwi79GkqPf2hDGUM/biDPwQutmDlnE3fnam2ZyarUHyZ0D07GLPhMvbICMzctZARQ1Eww0jZgQffKMmubB2ftQh5hDwREBVne9DRm9kp8W84MEoTB7Wi75GjMvinD66MlmkHOSxn6yJjUbVD4D2CHg6QPeJA+vrMIxcnH2DBh1VyuncHuvLkgm9wYap7nZEIy5e41bXRqZTS6NMlWxx5OPj7gEfD80ZYvQ4/bDBmo6gTo74kdG8Jt+ZvdI7Rg0dA==" />
+      <parm name="CustomerId" value="&amp;#1272&amp;#127MJsOY0ZQbG/cRa0KN0dzhy9ElwBBq5Zqf9tnZj28If92B00DYf2d0aTg6BsmmeqefmL1vuDWNkyqZLFbJIxDRbMUODZC5TXLn9tqC5D0uR6CaNpNqCejZGFDEyik7SyhLtLTb8zudg3/PVEW0921vfaofcUYeQ7fZNYUD72z9BLldwGodzF9C/5d5M/TV1nzwM5jXYVvfeA17gepO6UbP0jL/sY3SLbqgAGM2GocJp6cF8CDnxhW0irfJTnCIqAijA1ESQh+sba3saNZIF3sN8wdUlqEN/Vx9nsXvwuvr15TlhG/ZovDbOBYNoCyhCkMT8WE2dM1AkSlwCNaK0gvxw==" />
+      <parm name="Sid" value="&amp;#1272&amp;#127eSU+qybYdH06K1yZZbNaPo5HGkJDgoWccUoLphJy+Udtvm7tXaMrJimGKYGKQlV2+ZJ+gpFzYdQQHd1RL4437yc+sj6RQ52QBjOFcXTP3sldMHeYy9NV17Uxy8GPKkHzfS6V2CdJQ8ehKyZorPf1vrgDnxv9lALC3blGuwEPXBv2/OcqMFLdNxVCI5B1CUPmY4wtr0euEoDLQNws1gLjIarmO3osR/AvtrZwvG5izJYDTtrnBICfFTwHjLNEYlhWLG/bSDEoSSdv4e3lBhPbf4NbzjRPPV1I6oQKq4aJuO2Uah/bp6enFPBUMmwS4oBR2SeWM4LpVxMPewlN9JO/+g==" />
     </characteristic>
   </characteristic>
 </wap-provisioningdoc>
