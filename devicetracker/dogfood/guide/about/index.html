@@ -10,8 +10,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="About Device Tracker (Alpha)">
-    <title>About Device Tracker (Alpha) - Zebra Technologies TechDocs</title>
+    <meta title="About Device Tracker (Dogfood)">
+    <title>About Device Tracker (Dogfood) - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -57,11 +57,12 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Tracker
-                                            (Alpha)
+                                            (Dogfood)
                         </p>
 
                     </ul>
                 </div>
+                <!-- 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>
@@ -97,6 +98,7 @@
                         
                     </ul>
                 </div>
+                -->
             </div><!--/.container-->
         </nav><!--/nav-->
     </header><!--/header-->
@@ -111,7 +113,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>About Device Tracker (Alpha)</strong></li>
+                            <li><strong>About Device Tracker (Dogfood)</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -197,10 +199,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="about-device-tracker-alpha" class="anchor"><a class="heading-anchor" href="#about-device-tracker-alpha"><span></span></a>About Device Tracker (Alpha)</h1>
+                                    <h1 id="about-device-tracker-dogfood" class="anchor"><a class="heading-anchor" href="#about-device-tracker-dogfood"><span></span></a>About Device Tracker (Dogfood)</h1>
                                     <p>
                                             Device Tracker
-                                            (Alpha)
+                                            (Dogfood)
                                     </p>
                                 </div>
                             </section>                    
@@ -225,7 +227,7 @@
 
 </p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Device Tracker is a cloud-based scalable solution that easily tracks Zebra Android mobile devices, finds missing devices and helps prevent device inventory shrinkage. Misplaced or lost devices within a facility are tracked by leveraging existing Wi-Fi network infrastructure and utilizing Bluetooth technology and audio chirping to locate devices. When locating a device, Device Tracker identifies the general area where the device is located based on the Access Point (AP) it is connected to within the facility. The visual proximity indicator relies on Bluetooth beacon transmissions to determine the approximate location of the device. Audio can be played on the misplaced device to further pinpoint its location.</p>
+<p>Device Tracker is a cloud-based scalable solution that makes it easy to track and recover lost or misplaced devices, preventing device inventory shrinkage. No additional hardware is required - leverage existing Wi-Fi network infrastructure along with Bluetooth and audio to locate devices. When locating a device, Device Tracker identifies the general vicinity of the lost device based on the Access Point (AP) it is connected to within the facility. The visual proximity indicator shows in real-time how close or far the lost device is located, relying on Bluetooth beacon transmissions. If the device is not within line-of-site, an alarm can be remotely triggered on the device to further determine its precise location.</p>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MzCWdLUhEPY" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
@@ -233,120 +235,129 @@
 
 <hr>
 
+<!-- NOTE: ALL LINKS REMOVED -->
+
 <h2 id="mainfeatures" class="anchor"><a class="heading-anchor" href="#mainfeatures"><span></span></a>Main Features</h2>
 
 <p>Main features of Device Tracker:</p>
 
 <ul>
-<li>Cloud-based scalable solution hosted and maintained by Zebra with support for up to 100K devices in multiple locations up to 5K sites.</li>
+<li>Cloud-based scalable solution hosted and maintained by Zebra with support for up to 100K devices in multiple locations.</li>
 
-<li>Support for central administrator, site manager, and site associate <a href="../config/#overview">roles</a>.
+<li>Support for central administrator, site manager, and site associate roles.</li>
 
-
-<ul>
-<li>Device <a href="../use/#deviceinformation">dashboard</a> for administrator to centrally track devices across multiple sites with ability to view at site-level.</li>
-
-<li>Device <a href="../use/#deviceinformation">dashboard</a> for site manager to track devices at the site-level and mark a misplaced or at-risk (e.g. low battery) device for retrieval.</li>
-
-<li>Web portal for centralized administration of <a href="../config/#configuredevicecheckout">system settings</a> and admin and site manager <a href="../config/#manageusers">users</a>.</li></ul>
-</li>
+<li>The web portal provides a corporate-level dashboard for administrators and site-level dashboard for managers to monitor and track devices.</li>
 
 <li>Registration of:
 
 
 <ul>
-<li><a href="../config/#registeraccesspointssites">Sites and access points</a> with friendly names to easily identify device location.</li>
+<li>Sites and access points with friendly names to easily identify device location.</li>
 
-<li><a href="../config/#registerdevices">Devices</a> to assigned site with user friendly names for simple device identification.</li></ul>
+<li>Devices to assigned site with user friendly names for simple device identification.</li></ul>
 </li>
 
-<li>Simple to deploy – <a href="../setup">install and configure</a> the mobile application using StageNow and Enterprise Mobility Management tools.</li>
+<li>Simple to deploy – install and configure the mobile application using StageNow and Enterprise Mobility Management tools.</li>
 
-<li>Easily <a href="../use/#finddevice">find a misplaced device</a> with the connected AP location, the Bluetooth-based visual proximity indicator and play sound feature.</li>
+<li>Easily find a misplaced device with the connected AP location, the Bluetooth-based visual proximity indicator and play sound feature.</li>
 
-<li>Locate a device even when that device is powered off (for a limited time) if it has <a href="../secondaryble">secondary Bluetooth Low Energy (BLE)</a> beaconing capability.</li>
+<li>Locate a device even when that device is powered off (for a limited time) if it has secondary Bluetooth Low Energy (BLE) beaconing capability.</li>
 
-<li><a href="../use/#devicecheckout">Check-out</a> feature to associate users to devices for accountability. (Optional)</li>
+<li>Checkout feature to associate users to devices for accountability.</li>
+
+<li>Single Sign On (SSO) support for users to be authenticated with SSO credentials.</li>
+
+<li>Generate reports to monitor device performance, user activity and site activity.</li>
+
+<li>Automate workflows to ease the process of finding and tracking devices.</li>
+
+<li>Automatically receive notifications from lost devices in close proximity via audio, vibrating or LED alerts.</li>
 </ul>
 
 <hr>
 
-<h2 id="newindevicetracker52alpha" class="anchor"><a class="heading-anchor" href="#newindevicetracker52alpha"><span></span></a>New in Device Tracker 5.2 (Alpha)</h2>
+<h2 id="newindevicetracker52dogfood" class="anchor"><a class="heading-anchor" href="#newindevicetracker52dogfood"><span></span></a>New in Device Tracker 5.2 (Dogfood)</h2>
 
 <ul>
-<li>New feature to detect lost devices nearby when a lost device is marked for retrieval. The detecting device receives a notification when located in the proximity of a lost device.</li>
+<li>New <strong>Lost Device Nearby</strong> feature automatically sends notification messages (with audio, vibrating, or LED alerts) to any device located in close proximity of a lost device.</li>
 </ul>
 
 <hr>
 
 <h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
 
-<h3 id="newindevicetracker51alpha" class="anchor"><a class="heading-anchor" href="#newindevicetracker51alpha"><span></span></a>New in Device Tracker 5.1 (Alpha)</h3>
+<h3 id="newindevicetracker51dogfood" class="anchor"><a class="heading-anchor" href="#newindevicetracker51dogfood"><span></span></a>New in Device Tracker 5.1 (Dogfood)</h3>
 
 <ul>
-<li>The web portal now provides a dashboard for administrators and managers to track devices and administrators to manage devices, access points and sites.</li>
+<li>The web portal now provides a <strong>dashboard for administrators</strong> and <strong>managers</strong> to monitor and track devices.</li>
 
-<li>New Single Sign On (SSO) OAuth 2.0 support. Enterprise Login Screen facilitates SSO login for users to gain device access.</li>
+<li>Administrators can now <strong>manage devices</strong>, <strong>access points</strong> and <strong>sites</strong> through the web portal either manually or by uploading the data via .CSV file.</li>
+
+<li>New <strong>Single Sign On</strong> (SSO) OAuth 2.0 support.</li>
+
+<li>Add SSO users for admin or manager access to the web portal through <strong>Manage Users</strong>.</li>
 
 <li>New reporting features:
 
 
 <ul>
-<li>Data Reporting - generate reports on daily device status counts, device utilization and device checkout.</li>
+<li><strong>Site Data Report</strong> - generate reports on demand showing daily device event counts based on site.</li>
 
-<li>End of Day Summary Report - generate a snapshot report showing device summary at the end of the day.</li></ul>
+<li><strong>End of Day Report</strong> - generate a snapshot report showing device summary and checked out devices at the end of the day with the option to email the report to recipients.</li></ul>
 </li>
 
-<li>New feature to detect lost devices nearby when a lost device is marked for retrieval. The detecting device receives a notification when located in the proximity of a lost device.</li>
+<li>New capability to assign a manager to a site when creating a <strong>new user</strong>.</li>
 
-<li>New capability to assign a manager to a site when creating a new user.</li>
+<li><em>Limitation:</em> If upgrading from Device Tracker 5.0 or lower, sites imported via .CSV file on the device must be updated with the local <strong>time zone</strong> information in order for the new <strong>data reporting</strong> features to work.</li>
+
+<li><em>Deprecated Feature:</em> .CSV file import through the device client app for device, access point and site registration is deprecated. Starting with v5.1, Zebra recommends to import the .CSV file through the web portal.</li>
 </ul>
 
-<h3 id="newindevicetracker50alpha" class="anchor"><a class="heading-anchor" href="#newindevicetracker50alpha"><span></span></a>New in Device Tracker 5.0 (Alpha)</h3>
+<h3 id="newindevicetracker50dogfood" class="anchor"><a class="heading-anchor" href="#newindevicetracker50dogfood"><span></span></a>New in Device Tracker 5.0 (Dogfood)</h3>
 
 <ul>
-<li>New <a href="../config/#workflowautomation">workflow automation</a> to automate the process of finding lost mobile devices based on rules and thresholds configured.</li>
+<li>New <strong>workflow automation</strong> to automate the process of finding lost mobile devices based on rules and thresholds configured.</li>
 
-<li>Now automatically assign a device to a known site based on its connected access point (AP) with <a href="../config/#devicetositeassignment">automatic device registration</a>.</li>
+<li>Now automatically assign a device to a known site based on its connected access point (AP) with <strong>automatic device registration</strong>.</li>
 
-<li>New <a href="../config/#configuredevicecheckout">Device Checkin Options</a> to select the method of checkin: manual, cradle, or reboot.</li>
+<li>New <strong>Device Checkin Options</strong> to select the method of checkin: manual, cradle, or reboot.</li>
 
-<li>New capability to play an audio alert if <a href="../use/#donotdisturbdndmode">Do Not Disturb (DND)</a> is enabled on the lost device being tracked.</li>
+<li>New capability to play an audio alert if <strong>Do Not Disturb (DND)</strong> is enabled on the lost device being tracked.</li>
 </ul>
 
 <hr>
 
-<h2 id="download" class="anchor"><a class="heading-anchor" href="#download"><span></span></a>Download</h2>
+<h2 id="install" class="anchor"><a class="heading-anchor" href="#install"><span></span></a>Install</h2>
 
-<p>Device and network <a href="../setup/#requirements">requirements</a> must be met prior to installation.</p>
-
-<p>Select one of the following options to install Device Tracker (Alpha):</p>
-
-<ul>
-<li><strong>Option 1 - Automated:</strong>
-
+<p>Device and network <a href="https://techdocs.zebra.com/devicetracker/latest/guide/setup/#requirements">requirements</a> must be met prior to installation.</p>
 
 <ol>
-<li>Download the <a href="./DeviceTrackerAlphaInstall.pdf">StageNow installation and configuration barcode</a>.</li>
+<li>Open the <a href="./DeviceTrackerDogfoodInstall.pdf">StageNow installation and configuration barcode</a>.</li>
 
-<li>Open StageNow client on the device.</li>
+<li>Open StageNow client on the device and scan the barcode to install and configure Device Tracker.</li>
+</ol>
 
-<li>Scan the barcode from the downloaded StageNow .PDF file to install and configure Device Tracker.</li></ol>
-</li>
+<p>See <a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/device-tracker.html">Device Tracker device compatibility</a>.</p>
 
-<li><strong>Option 2 - Manual:</strong>
+<!-- // REMOVE MANUAL INSTALL
+Select one of the following options to install Device Tracker (Dogfood):
+- **Option 1 - Automated:**
+  1. Download the <a href="./DeviceTrackerDogfoodInstall.pdf">StageNow installation and configuration barcode</a>.
+  2. Open StageNow client on the device.
+  3. Scan the barcode from the downloaded StageNow .PDF file to install and configure Device Tracker.
 
+- **Option 2 - Manual:**
+  1. Download the <a href="./DeviceTrackerDogfood.apk" download="">Device Tracker (Dogfood) .APK file</a> and <a href="./DeviceTrackerDogfoodConfig.pdf"> StageNow configuration barcode</a>.
+  2. Copy the .APK file to the device and install.
+  3. Open StageNow client on the device.
+  4. Scan the barcode from the downloaded StageNow configuration .PDF file to configure Device Tracker.
+-->
 
-<ol>
-<li>Download the <a href="./DeviceTrackerAlpha.apk" download="">Device Tracker (Alpha) .APK file</a> and <a href="./DeviceTrackerAlphaConfig.pdf"> StageNow configuration barcode</a>.</li>
+<hr>
 
-<li>Copy the .APK file to the device and install.</li>
+<h2 id="userguide" class="anchor"><a class="heading-anchor" href="#userguide"><span></span></a>User Guide</h2>
 
-<li>Open StageNow client on the device.</li>
-
-<li>Scan the barcode from the downloaded StageNow configuration .PDF file to configure Device Tracker.</li></ol>
-</li>
-</ul>
+<p>Refer to latest released <a href="https://techdocs.zebra.com/devicetracker">Device Tracker documentation</a>.</p>
 
 <hr>
 
@@ -356,106 +367,7 @@
 
 <iframe width="900" height="600" src="https://app.smartsheet.com/b/form/24fb10e4d73a4cdcb66edc7ed7454846"></iframe>
 
-<h2 id="-1" class="anchor"><a class="heading-anchor" href="#-1"><span></span></a><!--</h2>
-
-<h2 id="versionhistory">Version History</h2>
-
-<h3 id="newindevicetracker42">New in Device Tracker 4.2</h3>
-
-<ul>
-<li>Device Tracker now supports TC52AX and MC33AX and their optional <a href="../secondaryble">battery-based BLE</a> enabling Device Tracker to locate the device when powered off.</li>
-
-<li>Eliminated the need to allow <code>*.google.com</code> through the firewall or proxy. See <a href="../setup/#networkrequirements">Network Requirements</a>.</li>
-
-<li>Added support for Android 11 devices. See <a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/device-tracker.html">Device Compatibility</a>.</li>
-
-<li>Fixed an intermittent issue when a user is unable to scan a barcode to check-out the device.</li>
-
-<li>Known Behavior: During a Google Play Services update, the Device Tracker app gets closed. Relaunch the Device Tracker app or reboot the device to continue tracking of the device.</li>
-</ul>
-
-<h3 id="newindevicetracker41">New in Device Tracker 4.1</h3>
-
-<ul>
-<li>Locate a device even when that device is powered off (for a limited time) if it has <a href="../config/#secondaryble">secondary BLE beaconing</a> capability.</li>
-
-<li>New device support for EC50. See <a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/device-tracker.html">Supported Devices.</a></li>
-
-<li>Added support to <a href="../setup">silently deploy</a> Device Tracker on mobile devices using EMM and StageNow, allowing uninterrupted device operation for the end user (if Check-out is not enabled).</li>
-
-<li>Administrator or manager can scan a barcode for user name and password during login, eliminating manual entry.</li>
-
-<li>Resolved Issues:
-
-
-<ul>
-<li>After repeatedly launching Device Tracker over several weeks without rebooting the device, the app may become unresponsive.</li>
-
-<li>When there are multiple pools of licenses with different expiration dates, an incorrect license count is reported after the licenses expire.</li></ul>
-</li>
-
-<li>Known Issue: When installing the application on a mobile device using an EMM, some EMMs may not have implemented the Zebra value-added features for seamless deployment. Alternatively, an XML file can be generated from the StageNow profile and consumed by the EMM for seamless deployment. Refer to the <a href="../setup">Install &amp; Setup guide</a>.</li>
-</ul>
-
-<hr />
-
-<h2 id="devicetrackercomparison">Device Tracker Comparison</h2>
-
-<p>Comparison of <strong><a href="/devicetracker-onprem/latest/guide/about">Device Tracker On-Prem</a></strong> and <strong>Device Tracker</strong> cloud-based:</p>
-
-<table class="facelift" style="width:100%" border="1" padding="5px">
-  <tr bgcolor="#dce8ef">
-    <th style="text-align:center">Features</th>
-    <th style="text-align:center">Device Tracker<br>On-Prem</th>
-    <th style="text-align:center">Device Tracker</th>
-  </tr>
-  <tr>
-    <td style="text-align:left">Host platform</td>
-    <td style="text-align:left">On-premise server, requires manual install and setup</td>
-    <td style="text-align:left">Cloud-based solution managed by Zebra</td>
-  </tr>
-  <tr>
-    <td>Maximum Devices Supported</td>
-    <td>500</td>
-    <td>100,000</td>
-  </tr>
-  <tr>
-    <td>Site support</td>
-    <td>Single; multiple sites require individual server installation at each location</td>
-    <td>Multi-site; centralized in-the-cloud supporting multiple locations up to 5,000 sites without any additional install required</td>
-  </tr>
-  <tr>
-    <td>Server setup required</td>
-    <td>Yes, Windows server with required software and other system requirements</td>
-    <td>No, server is in the cloud and managed by Zebra</td>
-  </tr>
-  <tr>
-    <td>Android platform support</td>
-    <td>Only supported on select devices up to Android 10</td>
-    <td>Only supported on select Android Oreo and Android 10 devices</td>
-  </tr>
-  <tr>
-    <td>Common Features</td>
-    <td colspan="2">• Simple real-time device locationing with connected AP identification, Bluetooth-based visual proximity indicator and remote play sound feature<br>• Registration of sites, APs and devices with friendly names for ease of identification<br>• Misplaced and at-risk device prevention by monitoring low power and disconnection device states<br>• Role-based access to find and manage devices based on administrator, site manager and associate roles<br>• Centralized dashboard</td>
-  </tr>
-  <tr>
-    <td>Device Check-out/<br>Check-in</td>
-    <td>No</td>
-    <td>Yes, identifies device user</td>
-  </tr>
-  <tr>
-    <td>Dashboard</td>
-    <td>Server-based dashboard view</td>
-    <td>Device-based dashboard view</td>
-  </tr>
-  <tr>
-    <td>Cost</td>
-    <td>Free</td>
-    <td>Licensed subscription service</td>
-  </tr>
-</table>
-
-<h2 id="">--></h2>
+<hr>
 
 <h2 id="seealso" class="anchor"><a class="heading-anchor" href="#seealso"><span></span></a>See Also</h2>
 
