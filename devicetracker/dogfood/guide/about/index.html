@@ -10,8 +10,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="About Device Tracker (Dogfood)">
-    <title>About Device Tracker (Dogfood) - Zebra Technologies TechDocs</title>
+    <meta title="About Device Tracker (Dogfooding)">
+    <title>About Device Tracker (Dogfooding) - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -57,48 +57,16 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Tracker
-                                            (Dogfood)
+                                            (Dogfooding)
                         </p>
 
                     </ul>
                 </div>
-                <!-- 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li>
-                            <a href="/devicetracker/dogfood/guide/about">
-                                        About
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/devicetracker/dogfood/guide/license">
-                                        Licensing
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/devicetracker/dogfood/guide/setup">
-                                        Install &amp; Setup
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/devicetracker/dogfood/guide/config">
-                                        Configuration
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/devicetracker/dogfood/guide/use">
-                                        Track Devices
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/devicetracker/dogfood/search">
-                                    <i class="fa fa-search"></i>
-                            </a>
-                        </li>
                         
                     </ul>
                 </div>
-                -->
             </div><!--/.container-->
         </nav><!--/nav-->
     </header><!--/header-->
@@ -113,7 +81,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>About Device Tracker (Dogfood)</strong></li>
+                            <li><strong>About Device Tracker (Dogfooding)</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -199,10 +167,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="about-device-tracker-dogfood" class="anchor"><a class="heading-anchor" href="#about-device-tracker-dogfood"><span></span></a>About Device Tracker (Dogfood)</h1>
+                                    <h1 id="about-device-tracker-dogfooding" class="anchor"><a class="heading-anchor" href="#about-device-tracker-dogfooding"><span></span></a>About Device Tracker (Dogfooding)</h1>
                                     <p>
                                             Device Tracker
-                                            (Dogfood)
+                                            (Dogfooding)
                                     </p>
                                 </div>
                             </section>                    
@@ -215,7 +183,11 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-                                        <p><!--
+                                        <p></p><div class="alert alert-danger alert-dismissible fade in" role="alert">
+<p style="color:red"><b>FOR INTERNAL ZEBRA USE ONLY - DO NOT DISTRIBUTE</b></p>
+</div>
+
+<!--
 
 <div class="alert alert-danger alert-dismissible fade in" role="alert"><b>Important information about Device Tracker:</b><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp; <b>Device Tracker</b> 4.0 and later is the cloud-based version of the solution. <br>
@@ -225,7 +197,7 @@
 
 -->
 
-</p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+<p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
 <p>Device Tracker is a cloud-based scalable solution that makes it easy to track and recover lost or misplaced devices, preventing device inventory shrinkage. No additional hardware is required - leverage existing Wi-Fi network infrastructure along with Bluetooth and audio to locate devices. When locating a device, Device Tracker identifies the general vicinity of the lost device based on the Access Point (AP) it is connected to within the facility. The visual proximity indicator shows in real-time how close or far the lost device is located, relying on Bluetooth beacon transmissions. If the device is not within line-of-site, an alarm can be remotely triggered on the device to further determine its precise location.</p>
 
@@ -276,70 +248,122 @@
 
 <hr>
 
-<h2 id="newindevicetracker52dogfood" class="anchor"><a class="heading-anchor" href="#newindevicetracker52dogfood"><span></span></a>New in Device Tracker 5.2 (Dogfood)</h2>
+<h2 id="newindevicetracker52" class="anchor"><a class="heading-anchor" href="#newindevicetracker52"><span></span></a>New in Device Tracker 5.2</h2>
 
 <ul>
-<li>New <strong>Lost Device Nearby</strong> feature automatically sends notification messages (with audio, vibrating, or LED alerts) to any device located in close proximity of a lost device.</li>
+<li>New <strong>Lost Device Nearby</strong> feature automatically sends notification messages (with audio, vibrating, or LED alerts) to any device located in close proximity of a lost device.
+<!--
+---
+
+## Version History
+
+### New in Device Tracker 5.1
+
+- The web portal now provides a **dashboard for administrators** and **managers** to monitor and track devices.
+- Administrators can now **manage devices**, **access points** and **sites** through the web portal either manually or by uploading the data via .CSV file.
+- New **Single Sign On** (SSO) OAuth 2.0 support.
+- Add SSO users for admin or manager access to the web portal through **Manage Users**.
+- New reporting features:
+  - **Site Data Report** - generate reports on demand showing daily device event counts based on site.
+  - **End of Day Report** - generate a snapshot report showing device summary and checked out devices at the end of the day with the option to email the report to recipients.
+- New capability to assign a manager to a site when creating a **new user**.
+- _Limitation:_ If upgrading from Device Tracker 5.0 or lower, sites imported via .CSV file on the device must be updated with the local **time zone** information in order for the new **data reporting** features to work.
+- _Deprecated Feature:_ .CSV file import through the device client app for device, access point and site registration is deprecated. Starting with v5.1, Zebra recommends to import the .CSV file through the web portal.
+
+### New in Device Tracker 5.0 
+
+- New **workflow automation** to automate the process of finding lost mobile devices based on rules and thresholds configured.
+- Now automatically assign a device to a known site based on its connected access point (AP) with **automatic device registration**.
+- New **Device Checkin Options** to select the method of checkin: manual, cradle, or reboot.
+- New capability to play an audio alert if **Do Not Disturb (DND)** is enabled on the lost device being tracked.
+--></li>
 </ul>
 
 <hr>
 
-<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+<h2 id="getstarted" class="anchor"><a class="heading-anchor" href="#getstarted"><span></span></a>Get Started</h2>
 
-<h3 id="newindevicetracker51dogfood" class="anchor"><a class="heading-anchor" href="#newindevicetracker51dogfood"><span></span></a>New in Device Tracker 5.1 (Dogfood)</h3>
+<p>Contact David Singer for access to the dogfooding system. Device and network <a href="https://techdocs.zebra.com/devicetracker/latest/guide/setup/#requirements">requirements</a> must be met prior to installation. See <a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/device-tracker.html">Device Tracker Download &amp; Support</a> for device compatibility.</p>
 
-<ul>
-<li>The web portal now provides a <strong>dashboard for administrators</strong> and <strong>managers</strong> to monitor and track devices.</li>
+<h3 id="resetpassword" class="anchor"><a class="heading-anchor" href="#resetpassword"><span></span></a>Reset Password</h3>
 
-<li>Administrators can now <strong>manage devices</strong>, <strong>access points</strong> and <strong>sites</strong> through the web portal either manually or by uploading the data via .CSV file.</li>
+<p>The password must be reset for first-time use. Your Zebra email ID is used for the user name. </p>
 
-<li>New <strong>Single Sign On</strong> (SSO) OAuth 2.0 support.</li>
+<p>See <a href="http://zebra-stage.github.io/devicetracker/5-2/guide/config/#resetpassword">Reset Password</a> for instructions.</p>
 
-<li>Add SSO users for admin or manager access to the web portal through <strong>Manage Users</strong>.</li>
+<!-- 
+1. In the browser, enter the web portal URL supplied and click **Forgot your password.**
+    <img alt="image" style="height:350px" src="web-portal-login.png"/>
+2. Enter your Zebra email address and click **Reset Password.** You will receive an email describing how to reset the password.
+3. Open the mobile client app. Tap the options menu at the top right and select **Admin/Manager Login.** 
+    <img alt="image" style="height:350px" src="device-login.png"/>
+4. Enter your login credentials to login on as Manager. 
 
-<li>New reporting features:
+-->
 
+<!-- 
+**Reset password through the client app:**<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. On the mobile device, launch the Device Tracker app.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Select Menu > Admin/Manager Login.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Tap **Forgot your password** and enter your Zebra email address.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. You will receive an email describing how to reset the password.<br />
+    <img alt="image" style="height:350px" src="device-login.png"/>
+    -->
 
-<ul>
-<li><strong>Site Data Report</strong> - generate reports on demand showing daily device event counts based on site.</li>
+<h3 id="installsetup" class="anchor"><a class="heading-anchor" href="#installsetup"><span></span></a>Install &amp; Setup</h3>
 
-<li><strong>End of Day Report</strong> - generate a snapshot report showing device summary and checked out devices at the end of the day with the option to email the report to recipients.</li></ul>
-</li>
-
-<li>New capability to assign a manager to a site when creating a <strong>new user</strong>.</li>
-
-<li><em>Limitation:</em> If upgrading from Device Tracker 5.0 or lower, sites imported via .CSV file on the device must be updated with the local <strong>time zone</strong> information in order for the new <strong>data reporting</strong> features to work.</li>
-
-<li><em>Deprecated Feature:</em> .CSV file import through the device client app for device, access point and site registration is deprecated. Starting with v5.1, Zebra recommends to import the .CSV file through the web portal.</li>
-</ul>
-
-<h3 id="newindevicetracker50dogfood" class="anchor"><a class="heading-anchor" href="#newindevicetracker50dogfood"><span></span></a>New in Device Tracker 5.0 (Dogfood)</h3>
-
-<ul>
-<li>New <strong>workflow automation</strong> to automate the process of finding lost mobile devices based on rules and thresholds configured.</li>
-
-<li>Now automatically assign a device to a known site based on its connected access point (AP) with <strong>automatic device registration</strong>.</li>
-
-<li>New <strong>Device Checkin Options</strong> to select the method of checkin: manual, cradle, or reboot.</li>
-
-<li>New capability to play an audio alert if <strong>Do Not Disturb (DND)</strong> is enabled on the lost device being tracked.</li>
-</ul>
-
-<hr>
-
-<h2 id="install" class="anchor"><a class="heading-anchor" href="#install"><span></span></a>Install</h2>
-
-<p>Device and network <a href="http://zebra-stage.github.io/devicetracker/5-2/guide/setup/#requirements">requirements</a> must be met prior to installation.</p>
+<p>To install and configure Device Tracker client app:</p>
 
 <ol>
-<li>Connect the mobile device to the internet via Wi-Fi.</li>
+<li>Connect the device to the internet via Wi-Fi.</li>
 
-<li>Open the <a href="./DeviceTrackerAlphaInstall.pdf">StageNow installation and configuration barcode</a>.</li>
+<li>Launch the StageNow client.</li>
 
-<li>Open StageNow client on the device and scan the barcode to install and configure Device Tracker.</li>
+<li><strong>Scan the barcode</strong> provided <a href="./DeviceTrackerAlphaInstall.pdf">here</a>. After the client app is installed, the screen below appears while the server configuration is taking place (may take more than 10 seconds to complete), followed by the Checkout screen blocking device access. This confirms the server connection is established and the client app is ready for use. 
+<table>
+    <tbody><tr>
+        <td>
+            <img alt="image" style="height:350px" src="server-config-setup.png">
+        </td> 
+        <td> &nbsp; &nbsp; &nbsp;
+        </td>
+        <td>
+            <img alt="image" style="height:350px" src="checkout.png">
+        </td>
+    </tr>
+    <tr>
+        <td><i>Server configuring after install.</i></td> 
+        <td>&nbsp; &nbsp; &nbsp;</td>
+        <td><i>Checkout block access screen.</i></td>
+    </tr>
+</tbody></table></li>
+
+<li><strong>Scan any barcode</strong> to remove the screen - this is not configurable in the demo and appears each time the device is connected to external power.</li>
+
+<li><strong>Login.</strong> Tap on the options menu at the top-right and select <strong>Admin/Manager Login.</strong> Enter your user credentials.</li>
+
+<li><strong>Register your devices and access points.</strong> <em>This feature is available only in the Dogfooding instance</em> as an alternative to CSV upload or manual entry:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. <strong>Enter your site name.</strong> This must match the site name assigned to you for demo use.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. <strong>Optionally, provide a friendly name for each device.</strong> For example, “Ken’s Device”.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. <strong>Provide the location friendly name for each access point MAC address</strong> used for the Wi-Fi connection. For example, “Electronics” as a friendly name for the access point near the Electronics department. To register friendly names for multiple access points, go to each access point area for the device to connect, click on refresh and register the friendly name.
+<table>
+    <tbody><tr>
+        <td>
+            <img alt="image" style="height:350px" src="register-option.png">
+        </td> 
+        <td> &nbsp; &nbsp; &nbsp;
+        </td>
+        <td>
+            <img alt="image" style="height:350px" src="register.png">
+        </td>
+    </tr>
+    <tr>
+        <td><i>Tap <b>Set Site, Device &amp; AP</b></i></td> 
+        <td>&nbsp; &nbsp; &nbsp;</td>
+        <td><i>Enter device name (optional), site, and AP friendly name</i></td>
+    </tr>
+</tbody></table></li>
 </ol>
-
-<p>See <a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/device-tracker.html">Device Tracker device compatibility</a>.</p>
 
 <!-- // REMOVE MANUAL INSTALL
 Select one of the following options to install Device Tracker (Dogfood):
@@ -359,7 +383,23 @@ Select one of the following options to install Device Tracker (Dogfood):
 
 <h2 id="userguide" class="anchor"><a class="heading-anchor" href="#userguide"><span></span></a>User Guide</h2>
 
-<p>Refer to the <strong><em>pre-released</em></strong> <a href="http://zebra-stage.github.io/devicetracker/5-2/guide/about/">Device Tracker documentation</a>, <em>subject to change.</em></p>
+<p><code>For Zebra Internal Use Only - Do Not Distribute.</code> </p>
+
+<p>Refer to the <strong><em>pre-released</em></strong> <a href="http://zebra-stage.github.io/devicetracker/5-2/guide/about/">Device Tracker documentation</a>, <em>subject to change.</em> </p>
+
+<hr>
+
+<h2 id="serverconfiguration" class="anchor"><a class="heading-anchor" href="#serverconfiguration"><span></span></a>Server Configuration</h2>
+
+<p>By default, most dogfooding participants are granted manager access. As managers, server configuration is not visible. This section displays the current server configuration that can affect Device Tracker operation.</p>
+
+<p>Checkin/Checkout configuration:</p>
+
+<p><img alt="image" style="height:250px" src="checkin-checkout.png"></p>
+
+<p>Automation configuration:</p>
+
+<p><img alt="image" style="height:450px" src="automation.png"></p>
 
 <hr>
 
