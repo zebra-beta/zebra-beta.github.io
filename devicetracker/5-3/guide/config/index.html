@@ -374,7 +374,7 @@
 
 <h2 id="sso" class="anchor"><a class="heading-anchor" href="#sso"><span></span></a>SSO</h2>
 
-<p>Optionally, integrate single sign-on (SSO) with Device Tracker to authenticate users with their corporate credentials to gain access to the device. There are 3 different levels of access based on user role: administrator, manager, or end user. SSO activation allows administrators and managers to login to Device Tracker with their SSO credentials and gain access to their respective <a href="../dashboard">dashboards</a> on the device and web portal. For other users, there is no change in Device Tracker client app access when logging in with their SSO credentials - after logging in, the <a href="../use/#markdevicetofind">To Be Found</a> screen is seen when the client app is launched. SSO credentials are <em>not</em> used for user accountability, only for user authentication to gain device access. <strong><em>Only OAuth 2.0 using Mutual-TLS client certificates for client authentication is supported for SSO integration.</em></strong></p>
+<p>Optionally, integrate single sign-on (SSO) with Device Tracker to authenticate users with their corporate SSO credentials to gain access to the device based on role. There are 3 different levels of access based on user role: administrator, manager, or end user. SSO activation allows administrators and managers to login to Device Tracker with their SSO credentials and gain access to their respective <a href="../dashboard">dashboards</a> on the device and web portal. For other users, there is no change in Device Tracker client app access when logging in with their SSO credentials - after logging in, the <a href="../use/#markdevicetofind">To Be Found</a> screen is seen when the client app is launched. SSO credentials are <em>not</em> used for user accountability, only for user authentication to gain device access. <strong><em>Only OAuth 2.0 with PKCE is supported for SSO integration.</em></strong><!-- **_Only OAuth 2.0 using Mutual-TLS client certificates for client authentication is supported for SSO integration._** --></p>
 
 <h3 id="certificategenerationdeployment" class="anchor"><a class="heading-anchor" href="#certificategenerationdeployment"><span></span></a>Certificate Generation &amp; Deployment</h3>
 
@@ -432,13 +432,7 @@
 
 <p><strong>After activating SSO,</strong> if <a href="#checkincheckoutdevice">Checkin/Checkout</a> is enabled, <em>user accountability does not take place and there is no difference in behavior compared to if this option is disabled.</em></p>
 
-<!-- NOTE: ELS REMOVED FROM v5.1
-**To enforce user accountability and prevent device access until the user logs in with their SSO credentials, install [Enterprise Login Screen (ELS).](#enterpriseloginscreen)** User accountability associates the user to the device based on login so the administrator can track device ownership.
-
-Behavior if ELS is not installed (no user accountability):
-* **If SSO is activated and [Checkin/Checkout](#checkincheckoutdevice) is enabled,** when Device Tracker is launched it defaults to the [user/associate role](#userassociaterole) and displays the "To Be Found" screen. The [administrator](#administratorrole) or [manager](#managerrole) can login to Device Tracker client app to view and manage devices based on their role. To login, tap on the menu at the top right, select **Login** and enter the admin or manager SSO credentials. Alternatively, the user barcode can be scanned.
-* **If SSO is activated and Checkin/Checkout is disabled,** the same scenario applies as if Checkin/Checkout is enabled, except that the user barcode cannot be scanned.
--->
+<p><strong>To enforce user accountability and prevent device access until the user logs in with their SSO credentials, install <a href="#enterpriseloginscreen">Enterprise Login Screen (ELS).</a></strong> User accountability associates the user to the device based on login so the administrator can track device ownership.</p>
 
 <p><strong>Note:</strong> To use SSO, <strong>Device Tracker 5.1 or higher is required on the device.</strong> Otherwise, a server connection failed error may occur. To recover, clear the Device Tracker application cache either manually through Android settings or using <a href="/mx/appmgr/">App Manager</a> through MX.</p>
 
@@ -493,50 +487,106 @@ To configure the SSO Site Name parameter:
 4. Click on **Validate.**
 -->
 
-<!--  NOTE: ELS REMOVED IN v5.1
-### Enterprise Login Screen
+<h3 id="passcodebypass" class="anchor"><a class="heading-anchor" href="#passcodebypass"><span></span></a>Passcode Bypass</h3>
 
-_Enterprise Login Screen (ELS)_ can be used in conjunction with SSO to prevent users from accessing the device until they login with their SSO credentials and allow for user accountability. When ELS is launched, it grants access to the custom SSO login screen. After the user logs in with their SSO credentials, the user is associated to the device for accountability. When the user logs out, the user is disassociated from the device and the ELS screen is displayed, preventing access to the device until the user logs in. See [Install & Setup](#setup) for instructions to install ELS.
+<p>Passcode bypass allows a user to gain device access (through Enterprise Login Screen) in unexpected situations when they are not able to login with their SSO credentials, such as if the SSO server is down or the WiFi network is down. The administrator creates a passcode with an associated group name and supplies this passcode to the user to enter into the device for access to be granted.</p>
 
-Requirements for ELS:
-* **[Checkin/Checkout](#checkincheckoutdevice) must be enabled.** ELS takes place of the [Checkout](#checkincheckoutdevice) screen, replacing it with an SSO login screen. If any [Device Checkin Options](#devicecheckinoptions) are enabled, when the selected action(s) is triggered from that option, the ELS screen appears in place of the Checkout screen.
-* **Enterprise Login Screen and Chrome must be added to the Lock Task Mode allow list** through an EMM or other method. This blocks the user from accessing the device until the user logs in with their SSO credentials.
+<p>Requirements for Passcode Bypass:</p>
 
-<img alt="image" style="height:350px" src="els.png"/>
+<ul>
+<li><strong>SSO must be activated</strong></li>
 
-_Enterprise Login Screen_
+<li><strong><a href="#checkincheckoutdevice">Checkin/Checkout</a> must be enabled -</strong> </li>
 
-In the Enterprise Login Screen, tap **Next** for the custom SSO login screen to appear, prompting the user to login with their SSO credentials.
+<li><strong>Enterprise Login Screen is installed</strong></li>
+</ul>
 
-**Notes:**
-- **When using an EMM (Enterprise Mobility Management)** system:
-  - The EMM must allow ELS and Google Chrome to run on the device. Optionally, the administrator can hide Chrome in the launcher app home screen on the device.
-  - For security, the administrator can allow navigation only to the SSO URL to block all other URL access.
-- **When using AirWatch:**
-  - Attended Mode does not function with ELS.
-  - There is a limitation using ELS with the floating home button; the user is able to access the AirWatch home screen when tapping the button. If it is required to have ELS block device access, do not enable the floating home button in AirWatch.
+<p>To configure a passcode:</p>
+
+<ol>
+<li>Login as administrator to the web portal.</li>
+
+<li>Go to Settings &gt; SSO.</li>
+
+<li>Scroll to the Passcodes section located at the bottom of the page.</li>
+
+<li>Click <strong>Add.</strong></li>
+
+<li>Enter the following:
 
 
-#### Logout
+<ul>
+<li><strong>Group Name -</strong> to aid in identifying the user</li>
 
-To logout of ELS, in Device Tracker tap the top right menu and select **Logout of Device.** The user is logged out and the ELS screen appears for the next login session.
+<li><strong>Passcode -</strong> the passcode cannot contain special characters, such as <code>: = # { } [ ] : ; / \</code></li></ul>
+</li>
 
-<img alt="image" style="height:350px" src="logout.png"/>
+<li>Click <strong>Confirm.</strong>   </li>
+</ol>
 
-_Logout_
+<h3 id="enterpriseloginscreen" class="anchor"><a class="heading-anchor" href="#enterpriseloginscreen"><span></span></a>Enterprise Login Screen</h3>
 
-### System Login
+<p><em>Enterprise Login Screen (ELS)</em> is a separate mobile application that works in conjunction with SSO. It blocks device access until the user logs in with their SSO credentials. These login credentials are passed to Device Tracker for accountability and the appropriate Device Tracker screen is displayed to the users based on their role: for administrators, the admin dashboard displays data across all sites in the organization; for managers, the manager dashboard displays data specific for their assigned site, and all other users are presented with the “To Be Found” screen listing devices flagged for retrieval.</p>
 
-If the user cannot login to the device (e.g. SSO server is down) or forgot their SSO login credentials, the administrator can enter the system passcode on the device to bypass the SSO login. The system login passcode is set through [SSO integration](#ssointegration) under the **Enterprise Login Screen App** section.
+<p>When ELS is launched, it grants access to the custom SSO login screen. After the user logs in with their SSO credentials, the user is associated to the device for accountability. When the user logs out, the user is disassociated from the device and the ELS screen is displayed, preventing access to the device until the user logs in. <!-- See <a href="#setup">Install &amp; Setup</a> for instructions to install ELS.--></p>
 
-To login, in the ELS screen tap the menu at the top right, select **System Login** and enter the passcode.
+<p>Requirements for ELS:</p>
 
+<ul>
+<li><strong>SSO must be activated</strong></li>
+
+<li><strong><a href="#checkincheckoutdevice">Checkin/Checkout</a> must be enabled -</strong> ELS takes place of the <a href="#checkincheckoutdevice">Checkout</a> screen, replacing it with an SSO login screen. If any <a href="#devicecheckinoptions">Device Checkin Options</a> are enabled, when the selected action(s) is triggered from that option, the ELS screen appears in place of the Checkout screen.</li>
+
+<li><strong>Enterprise Login Screen and Chrome must be added to the Lock Task Mode allow list</strong> through an EMM or other method. This blocks the user from accessing the device until the user logs in with their SSO credentials.</li>
+</ul>
+
+<p><img alt="image" style="height:350px" src="els.jpg"></p>
+
+<p><em>Enterprise Login Screen</em></p>
+
+<p>In the Enterprise Login Screen, tap <strong>Next</strong> for the custom SSO login screen to appear, prompting the user to login with their SSO credentials.</p>
+
+<p><strong>Notes:</strong></p>
+
+<ul>
+<li><strong>When using an EMM (Enterprise Mobility Management)</strong> system:
+
+
+<ul>
+<li>The EMM must allow ELS and Google Chrome to run on the device. Optionally, the administrator can hide Chrome in the launcher app home screen on the device.</li>
+
+<li>For security, the administrator can allow navigation only to the SSO URL to block all other URL access.</li></ul>
+</li>
+
+<li><strong>When using AirWatch:</strong>
+
+
+<ul>
+<li>Attended Mode does not function with ELS.</li>
+
+<li>There is a limitation using ELS with the floating home button; the user is able to access the AirWatch home screen when tapping the button. If it is required to have ELS block device access, do not enable the floating home button in AirWatch.</li></ul>
+</li>
+</ul>
+
+<h4 id="logout" class="anchor"><a class="heading-anchor" href="#logout"><span></span></a>Logout</h4>
+
+<p>To logout of ELS, in Device Tracker tap the top right menu and select <strong>Sign out of Device.</strong> The user is logged out and the ELS screen appears for the next login session.</p>
+
+<p><img alt="image" style="height:350px" src="els-signout.jpg"></p>
+
+<p><em>Logout</em></p>
+
+<h4 id="passcodebypass-1" class="anchor"><a class="heading-anchor" href="#passcodebypass-1"><span></span></a>Passcode Bypass</h4>
+
+<p>If the user cannot login to the device (e.g. SSO server is down) or forgot their SSO login credentials, the administrator supplies the passcode for the user to enter on the device to bypass the SSO login. The passcode is set with an associated group name through <a href="#ssointegration">SSO integration</a> under the <strong>Enterprise Login Screen Mobile Client</strong> section.</p>
+
+To login, in the ELS screen tap the menu at the top right, select **Sign in with Passcode** and enter the passcode.
+<!-- 
 <img alt="image" style="height:350px" src="els-syslogin.png"/>
 
-_System login to bypass SSO_
+_System login to bypass SSO_ -->
 
-This logs in the user as "System". To login as manager or admin, the user must tap the **Logout** button in the ELS screen, then login with their SSO credentials.
--->
+<p>This checks in the user as "passcode_" followed by the group name as displayed in the Mobile Devices dashboard in the "Checked Out By" column. </p>
 
 <hr>
 
@@ -763,6 +813,26 @@ This logs in the user as "System". To login as manager or admin, the user must t
   <tr>
     <td style="text-align:center">emailList</td>
     <td style="text-align:left">A comma separated list of email addresses to receive the <i>End of Day Report.</i></td>
+    <td style="text-align:left">Optional</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">snapshotReportCategories</td>
+    <td style="text-align:left">A comma separated list of categories or device states to report for the End of Day Report.</td>
+    <td style="text-align:left">Optional</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">attachCSV</td>
+    <td style="text-align:left">Indicates whether report attachments are added to the email for the End of Day Report: True/False</td>
+    <td style="text-align:left">Optional</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">startIPAddress</td>
+    <td style="text-align:left">Specifies the start IP address range for the site. This applies if <b>IP Address Range</b> is configured for <b>Device-to-Site Assignment</b> under Settings &gt; Registration in the web portal</td>
+    <td style="text-align:left">Optional</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">endIPAddress</td>
+    <td style="text-align:left">Specifies the end IP address range for the site. This applies if <b>IP Address Range</b> is configured for <b>Device-to-Site Assignment</b> under Settings &gt; Registration in the web portal</td>
     <td style="text-align:left">Optional</td>
   </tr>
   <!-- 
@@ -1509,7 +1579,15 @@ When modifying the .CSV file, keep the header information intact and replace the
 
 <li>Under <strong>Device-to-Site Assignment.</strong> select the desired device registration method: <br>
 a. <strong>Manually assign devices to a site via CSV upload (default)</strong><br>Manually assign sites to devices by uploading a CSV file that includes the site name for the device to be assigned, see <a href="#importdevices">Import Devices</a>. <br>
-b. <strong>Automatically assign devices to a Connected AP's site</strong><br><i>Prerequisite:</i> <a href="#registeraccesspointssites">Register the site to an AP.</a><br>When the device connects to an AP, the device is automatically assigned a site name based on the AP it is connected to, provided the AP is registered with a site. If there is no site assigned to the AP, then no site name is assigned to the device and the device is listed under <a href="../use/#deviceinformation">Unassigned Devices</a> in the site list. <br></li>
+b. <strong>Automatically assign devices to a Connected AP's site</strong><br><i>Prerequisite:</i> <a href="#registeraccesspointssites">Register the site to an AP.</a><br>When the device connects to an AP, the device is automatically assigned a site name based on the AP it is connected to, provided the AP is registered with a site. If there is no site assigned to the AP, then no site name is assigned to the device and the device is listed under <a href="../use/#deviceinformation">Unassigned Devices</a> in the site list. <br>
+c. <strong>IP Address Range Configuration</strong><br>Allow an IP address range to be defined for a specific site. The device is automatically assigned to that site if its IP address falls within that range. Go to <a href="#managesites">Manage Sites</a> to specify the IP address range for a site. Once a device is assigned to a site, it will not become unassigned unless there is manual intervention, e.g. when decommissioning the device.
+
+
+<ul>
+<li>If a device is previously within range of a site and moves to another site whose range is not specified, it remains assigned to the original site. </li>
+
+<li>If a device is disconnected, it remains assigned to the previous site. </li></ul>
+</li>
 
 <li>Click <strong>Save.</strong></li>
 </ol>
@@ -1575,11 +1653,11 @@ b. <strong>Automatically assign devices to a Connected AP's site</strong><br><i>
 <p>Select one or more of the <strong>Device Checkin Options</strong> to specify the action that triggers a <a href="../use/#checkin">device checkin</a> after a device is checked out:</p>
 
 <ul>
-<li><strong>Manual -</strong> the user navigates to the options menu (top right) from the main screen of Device Tracker and selects <strong>Check-In Device.</strong></li>
+<li><strong>Manual -</strong> the user navigates to the options menu (top right) from the main screen of Device Tracker and selects <strong>Check-In Device</strong></li>
 
-<li><strong>Cradle -</strong> the user places the device on a powered cradle to checkin the device.</li>
+<li><strong>Cradle -</strong> the user places the device on a powered cradle to checkin the device</li>
 
-<li><strong>Reboot -</strong> the user reboots the device to checkin.</li>
+<li><strong>Reboot -</strong> the user reboots the device to checkin; required if Checkin/Checkout is enabled</li>
 </ul>
 
 <p>After device checkin from any of the above methods, the checkout screen appears prompting the user to scan a barcode to gain device access. By default, all 3 options are selected.</p>
@@ -1632,17 +1710,17 @@ b. <strong>Automatically assign devices to a Connected AP's site</strong><br><i>
 
 <li>Disconnected</li></ul>
 
-<p>After a device has been automatically marked "To Be Found" based on the above selection, if the device state changes and no longer satisfies the selected state(s), then "To Be Found" is removed from the device.</p></li>
-</ol>
+<p>After a device has been automatically marked "To Be Found" based on the above selection, if the device state changes and no longer satisfies the selected state(s), then "To Be Found" is removed from the device.</p>
 
 <blockquote>
   <p><strong>Important:</strong> During the finding process, before marking the device as "Found," <strong>make sure one of the selected conditions is NOT satisfied</strong> (e.g. checkin the device if "Checked out" is selected, or charge the device if "not charging" is selected). Otherwise, the device will return back to the "To Be Found" state after it is marked "Found."</p>
-</blockquote>
+</blockquote></li>
 
-<ol>
-<li><strong>Automatically clear found device's state -</strong> Enable this option to automatically place the device back “In Service” after it is located and marked “Found”. This eliminates the need to manually perform this action.</li>
+<li><p><strong>Automatically place device "In Service" when marked "Found" -</strong> Enable this option to automatically place the device back “In Service” after it is located and marked “Found”. This eliminates the need to manually perform this action.</p></li>
 
-<li>Click on <strong>Save.</strong></li>
+<li><p><strong>Automatically set "To Be Found" device to "In Service" upon checkout" -</strong> Enable this option to automatically place the device back "In Service" when a device in the "To Be Found" state is checked out. There is no need for the device to remain in the "To Be Found" state since the user has checked out the device.</p></li>
+
+<li><p>Click on <strong>Save.</strong></p></li>
 </ol>
 
 <h2 id="lostdevicenearby" class="anchor"><a class="heading-anchor" href="#lostdevicenearby"><span></span></a>Lost Device Nearby</h2>

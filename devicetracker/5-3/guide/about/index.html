@@ -304,19 +304,45 @@
 
 <hr>
 
-<h2 id="newindevicetracker53" class="anchor"><a class="heading-anchor" href="#newindevicetracker53"><span></span></a>New in Device Tracker 5.2</h2>
+<h2 id="newindevicetracker53" class="anchor"><a class="heading-anchor" href="#newindevicetracker53"><span></span></a>New in Device Tracker 5.3</h2>
 
 <ul>
-<li>New feature to automatically detect <a href="../config/#lostdevicenearby">Lost Devices Nearby</a>. When any device is in close proximity to a lost device, alert notifications (audio, vibration, LED or notification message) are received and further action can be taken to recover the lost device.
-<!--
-- [Enterprise Login Screen](../config/#enterpriseloginscreen) facilitates SSO login for users to gain device access.
-- [Site Data Report](../config/#) - generate reports on daily device status counts, device utilization and device checkout to monitor performance and activity.
-  --></li>
+<li><a href="../config/#sso">SSO</a> support for OAuth 2.0 with PKCE for user role-based access to Device Tracker</li>
+
+<li><a href="../config/#enterpriseloginscreen">Enterprise Login Screen</a> blocks device access until user authenticates to the device with SSO login credentials. <a href="../config/#passcodebypass">Passcode bypass</a> allows a user to gain device access in unexpected situations when SSO login cannot occur.</li>
+
+<li>Enhanced reporting:
+
+
+<ul>
+<li><a href="../dashboard/#endofdaydevicesummary">End of Day snapshot reports</a> - configuration of report content and detailed device reports sent via email</li>
+
+<li><a href="../dashboard/#eventsbysite">Site Data Report</a> - event count reports based on site with detailed device information, identification of manual vs automatic events, total and average amount of time provided for devices in "Being Found" or "To Be Found" state, and ability to export device detail information as a CSV file</li></ul>
+</li>
+
+<li><a href="../config/#devicetositeassignment">Automatic device assignment to a site based on a specified range of IP addresses (IPV4)</a> </li>
+
+<li><a href="../config/#configureautomationsettings">Automatic clearing of the “To Be Found” status upon device checkout</a> - If a device is in the “To Be Found” state when it is checked out, it is automatically set back “In Service” (rather than remaining in the “To Be Found” state).</li>
+
+<li>Known issues:
+
+
+<ul>
+<li>When accessing the SSO setting in the web portal, the Passcode section takes a few seconds to load the values. </li>
+
+<li>When a device is recommissioned (after being decommissioned), the device remains unassigned to a site (even if previously assigned to a site) until the user checks out the device through ELS.</li></ul>
+</li>
 </ul>
 
 <hr>
 
 <h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="newindevicetracker52" class="anchor"><a class="heading-anchor" href="#newindevicetracker52"><span></span></a>New in Device Tracker 5.2</h3>
+
+<ul>
+<li>New feature to automatically detect <a href="../config/#lostdevicenearby">Lost Devices Nearby</a>. When any device is in close proximity to a lost device, alert notifications (audio, vibration, LED or notification message) are received and further action can be taken to recover the lost device.</li>
+</ul>
 
 <h3 id="newindevicetracker51" class="anchor"><a class="heading-anchor" href="#newindevicetracker51"><span></span></a>New in Device Tracker 5.1</h3>
 
