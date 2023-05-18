@@ -340,7 +340,7 @@
 
 <li><a href="../dashboard/#accesspoints-1">Monitor Access Points</a></li>
 
-<li><a href="../e/#mobiledevices-1">Modify Devices</a> if <a href="../config/#registration">permitted by the administrator</a></li>
+<li><a href="../dashboard/#mobiledevices-1">Modify Devices</a> if <a href="../config/#registration">permitted by the administrator</a></li>
 
 <li><a href="../use/#accesspoints-1">Modify Access Point</a> if <a href="../config/#registration">permitted by the administrator</a></li></ul>
 </li>
@@ -374,7 +374,7 @@
 
 <h2 id="sso" class="anchor"><a class="heading-anchor" href="#sso"><span></span></a>SSO</h2>
 
-<p>Optionally, integrate single sign-on (SSO) with Device Tracker to authenticate users with their corporate SSO credentials to gain access to the device based on role. There are 3 different levels of access based on user role: administrator, manager, or end user. SSO activation allows administrators and managers to login to Device Tracker with their SSO credentials and gain access to their respective <a href="../dashboard">dashboards</a> on the device and web portal. For other users, there is no change in Device Tracker client app access when logging in with their SSO credentials - after logging in, the <a href="../use/#markdevicetofind">To Be Found</a> screen is seen when the client app is launched. SSO credentials are <em>not</em> used for user accountability, only for user authentication to gain device access. <strong><em>Only OAuth 2.0 with PKCE is supported for SSO integration.</em></strong><!-- **_Only OAuth 2.0 using Mutual-TLS client certificates for client authentication is supported for SSO integration._** --></p>
+<p>Optionally, integrate single sign-on (SSO) with Device Tracker to authenticate users with their corporate SSO login credentials to gain access to the device. Furthermore, SSO can be mapped to provide role-based access to Device Tracker. There are 3 different levels of Device Tracker access based on user role: administrator, manager, or end user. SSO activation allows administrators and managers to login to Device Tracker with their SSO credentials and gain access to their respective <a href="../dashboard">dashboards</a> on the device and web portal. For other users, there is no change in Device Tracker client app access when logging in with their SSO credentials - after logging in, the <a href="../use/#markdevicetofind">To Be Found</a> screen is seen when the client app is launched. SSO credentials are <em>not</em> used for user accountability, only for user authentication to gain device access. <strong><em>Only OAuth 2.0 with PKCE is supported for SSO integration.</em></strong><!-- **_Only OAuth 2.0 using Mutual-TLS client certificates for client authentication is supported for SSO integration._** --></p>
 
 <h3 id="certificategenerationdeployment" class="anchor"><a class="heading-anchor" href="#certificategenerationdeployment"><span></span></a>Certificate Generation &amp; Deployment</h3>
 
@@ -418,62 +418,82 @@
 
 <p>Action is required to <strong>activate SSO for integration with Device Tracker</strong> after Zebra services enables SSO in the cloud server. <em>Only activate SSO when all devices have Device Tracker 5.1 or higher.</em> Follow the <a href="#ssointegration">SSO integration</a> steps and then <a href="#manageusers">create SSO users</a>. When SSO is activated, only SSO users can login; non-SSO users cannot login.</p>
 
-<ul>
-<li><strong>When using Chrome for the first time on the device and attempting to login with SSO,</strong> the following steps are required before proceeding to login:</li>
-</ul>
-
-<ol>
-<li><p>Accept the Google Terms of Service.</p></li>
-
-<li><p>Select the desired option when prompted to turn on sync.</p>
-
-<p>If the device is running Android 8, the SSO login page appears again after logging in sucessfully. Tap the back button to open the Device Tracker dashboard.</p></li>
-</ol>
-
 <p><strong>After activating SSO,</strong> if <a href="#checkincheckoutdevice">Checkin/Checkout</a> is enabled, <em>user accountability does not take place and there is no difference in behavior compared to if this option is disabled.</em></p>
 
 <p><strong>To enforce user accountability and prevent device access until the user logs in with their SSO credentials, install <a href="#enterpriseloginscreen">Enterprise Login Screen (ELS).</a></strong> User accountability associates the user to the device based on login so the administrator can track device ownership.</p>
 
-<p><strong>Note:</strong> To use SSO, <strong>Device Tracker 5.1 or higher is required on the device.</strong> Otherwise, a server connection failed error may occur. To recover, clear the Device Tracker application cache either manually through Android settings or using <a href="/mx/appmgr/">App Manager</a> through MX.</p>
+<p><strong>Notes:</strong></p>
+
+<ul>
+<li><p>To use SSO, <strong>Device Tracker 5.1 or higher is required on the device.</strong> Otherwise, a server connection failed error may occur. To recover, clear the Device Tracker application cache either manually through Android settings or using <a href="/mx/appmgr/">App Manager</a> through MX.</p></li>
+
+<li><p><strong>When using Chrome for the first time on the device and attempting to login with SSO,</strong> the following steps are required before proceeding to login:</p>
+
+<ol>
+<li>Accept the Google Terms of Service.</li>
+
+<li>Select the desired option when prompted to turn on sync.</li></ol>
+
+<p>If the device is running Android 8, the SSO login page appears again after logging in sucessfully. Tap the back button to open the Device Tracker dashboard.</p></li>
+</ul>
 
 <h3 id="ssointegration" class="anchor"><a class="heading-anchor" href="#ssointegration"><span></span></a>SSO Integration</h3>
 
 <p>Follow these steps to integrate SSO with Device Tracker - <b><i>it is important to perform the step to <a href="#step-add-sso-user">create an SSO user</a>:</i></b></p>
 
 <ol>
-<li>In the browser, launch the Device Tracker web portal using the URL supplied.</li>
+<li><p>In the browser, launch the Device Tracker web portal using the URL supplied.</p></li>
 
-<li>Login using the super administrator credentials provided by Zebra. Enter the <strong>User ID</strong> and <strong>Password.</strong> Click <strong>Log In.</strong>
-<img alt="image" style="height:250px" src="portal-login.png"></li>
+<li><p>Login using the super administrator credentials provided by Zebra. Enter the <strong>User ID</strong> and <strong>Password.</strong> Click <strong>Log In.</strong>
+<img alt="image" style="height:250px" src="portal-login.png"></p></li>
 
-<li>After login, click <strong>Settings &gt; Single Sign On Integration (SSO).</strong>
-<img alt="image" style="height:150px" src="sso-toggle.png"></li>
+<li><p>After login, click <strong>Settings &gt; Single Sign On Integration (SSO).</strong>
+<img alt="image" style="height:150px" src="sso-toggle.png"></p></li>
 
-<li>Toggle <strong>Disabled</strong> to enable SSO integration with OAuth 2.0 Protocol. The SSO configuration page appears.
-<img alt="image" style="height:350px" src="sso-params.png"></li>
+<li><p>Toggle <strong>Disabled</strong> to enable SSO integration with OAuth 2.0 Protocol. The SSO configuration page appears.
+<img alt="image" style="height:350px" src="sso-params.png"></p></li>
 
-<li>The Device Tracker Mobile Client must be registered with the SSO identity provider (IdP). When registered, the <strong>Client ID</strong> and <strong>Client Redirect URI</strong> fields are automatically populated.</li>
+<li><p>The Device Tracker Mobile Client must be registered with the SSO identity provider (IdP). When registered, the <strong>Client ID</strong> and <strong>Client Redirect URI</strong> fields are automatically populated.</p></li>
 
-<li>Enter the appropriate information for all fields based on the SSO server settings. Scroll to the bottom of the page and click <strong>Validate.</strong></li>
+<li><p>Enter the appropriate information for all fields based on the SSO server settings. If using role-based mapping, enter the information under the <strong>Map SSO Provided Responses</strong> section based on your SSO parameters:</p>
 
-<li><em>Make sure pop-up windows are not blocked in the browser.</em> During the validation process, a status window appears followed by a login prompt - <strong>it is important to enter your login credentials</strong> to complete the validation process.</li>
+<p></p><ul>
+<li><strong>UserID Parameter -</strong> user ID or user name parameter that is configured in SSO and returned from the SSO response upon authenticating the user</li></ul><p></p>
 
-<li>When validation is successful, a confirmation prompt appears asking if you would like to activate SSO.</li>
+<p></p></li><li><strong>Use SSO Defined Roles -</strong> if enabled, uses role-based mapping to automatically map the administrator and manager user roles based on roles defined in your SSO. If disabled, the admin and manager users must be defined in the <a href="../config/#manageusers">Manage Users</a> section. Zebra recommends to enable this option to leverage the roles that exist through your SSO and avoid the need to manage users through Device Tracker.</li><p></p>
 
-<li>Click <strong>Yes.</strong></li>
+<p></p><li><strong>Site Location -</strong> site parameter that determines the location or site of the user</li><p></p>
 
-<li>A confirmation message appears indicating successful SSO configuration activation.
-<img alt="image" src="sso-success.png"></li>
+<p></p><li><strong>Admin Role Parameter -</strong> parameter that identifies whether the user is an admin</li><p></p>
 
-<li><span id="step-add-sso-user"><b>Important: The admin must add at least one SSO admin user.</b> See <a href="#ssouser">Add SSO User</a>. Otherwise, if the admin logs out before adding the SSO admin user, no admin user can login due to the lack of an SSO admin user registered.</span></li>
+<p></p><li><strong>Admin Roles -</strong> names of the admin roles</li><p></p>
 
-<li>Logout from the non-SSO session. In the top right, click on the logout icon.
-<img alt="image" style="height:250px" src="non-sso-logout.png"></li>
+<p></p><li><strong>Manager Role Parameter -</strong> parameter that identifies whether the user is a manager</li><p></p>
 
-<li>The SSO login page appears. Enter the user credentials to login. Click <strong>Sign In.</strong></li>
+<p></p><li><strong>Manager Roles -</strong> names of the manager roles</li><p></p>
 
-<li>Click on <strong>Settings &gt; Single Sign On Integration (SSO).</strong> The <strong>SSO Activation Status</strong> shows <strong>Activated.</strong>
-<img alt="image" style="height:200px" src="sso-activated.png"></li>
+<li><p>Register the following:</p></li>
+
+<li><p>Scroll to the bottom of the page and click <strong>Validate.</strong></p></li>
+
+<li><p><em>Make sure pop-up windows are not blocked in the browser.</em> During the validation process, a status window appears followed by a login prompt - <strong>it is important to enter your login credentials</strong> to complete the validation process.</p></li>
+
+<li><p>When validation is successful, a confirmation prompt appears asking if you would like to activate SSO.</p></li>
+
+<li><p>Click <strong>Yes.</strong></p></li>
+
+<li><p>A confirmation message appears indicating successful SSO configuration activation.
+<img alt="image" src="sso-success.png"></p></li>
+
+<li><p><span id="step-add-sso-user"><b>Important: The admin must add at least one SSO admin user.</b> See <a href="#ssouser">Add SSO User</a>. Otherwise, if the admin logs out before adding the SSO admin user, no admin user can login due to the lack of an SSO admin user registered.</span></p></li>
+
+<li><p>Logout from the non-SSO session. In the top right, click on the logout icon.
+<img alt="image" style="height:250px" src="non-sso-logout.png"></p></li>
+
+<li><p>The SSO login page appears. Enter the user credentials to login. Click <strong>Sign In.</strong></p></li>
+
+<li><p>Click on <strong>Settings &gt; Single Sign On Integration (SSO).</strong> The <strong>SSO Activation Status</strong> shows <strong>Activated.</strong>
+<img alt="image" style="height:200px" src="sso-activated.png"></p></li>
 </ol>
 
 <!--  // NOTE: Not in 5.1 GA.
@@ -487,18 +507,18 @@ To configure the SSO Site Name parameter:
 4. Click on **Validate.**
 -->
 
-<h3 id="passcodebypass" class="anchor"><a class="heading-anchor" href="#passcodebypass"><span></span></a>Passcode Bypass</h3>
+<h3 id="loginbypass" class="anchor"><a class="heading-anchor" href="#loginbypass"><span></span></a>Login Bypass</h3>
 
-<p>Passcode bypass allows a user to gain device access (through Enterprise Login Screen) in unexpected situations when they are not able to login with their SSO credentials, such as if the SSO server is down or the WiFi network is down. The administrator creates a passcode with an associated group name and supplies this passcode to the user to enter into the device for access to be granted.</p>
+<p>Login bypass allows a user to gain device access (through Enterprise Login Screen) and bypass the SSO login in unexpected situations when they are not able to login with their SSO credentials, such as if the SSO server is down or the WiFi network is down. The administrator creates a passcode with an associated group name and supplies this passcode to the user to enter into the device for access to be granted.</p>
 
-<p>Requirements for Passcode Bypass:</p>
+<p>Requirements for Login Bypass:</p>
 
 <ul>
-<li><strong>SSO must be activated</strong></li>
+<li>SSO must be activated</li>
 
-<li><strong><a href="#checkincheckoutdevice">Checkin/Checkout</a> must be enabled -</strong> </li>
+<li><a href="#checkincheckoutdevice">Checkin/Checkout</a> must be enabled</li>
 
-<li><strong>Enterprise Login Screen is installed</strong></li>
+<li>Enterprise Login Screen is installed</li>
 </ul>
 
 <p>To configure a passcode:</p>
@@ -516,13 +536,24 @@ To configure the SSO Site Name parameter:
 
 
 <ul>
-<li><strong>Group Name -</strong> to aid in identifying the user</li>
+<li><strong>Name -</strong> to aid in identifying the user</li>
 
 <li><strong>Passcode -</strong> the passcode cannot contain special characters, such as <code>: = # { } [ ] : ; / \</code></li></ul>
 </li>
 
 <li>Click <strong>Confirm.</strong>   </li>
 </ol>
+
+<table>
+  <tbody><tr>
+    <td><img alt="image" style="height:400px" src="passcode-add-1.jpg"></td>
+    <td> &nbsp; &nbsp; &nbsp; &nbsp; </td>
+    <td><img alt="image" style="height:200px" src="passcode-add-2.jpg"></td>
+  </tr>
+  <tr>
+    <td><i>Add new passcode with group name</i></td>
+  </tr>
+</tbody></table>
 
 <h3 id="enterpriseloginscreen" class="anchor"><a class="heading-anchor" href="#enterpriseloginscreen"><span></span></a>Enterprise Login Screen</h3>
 
@@ -576,17 +607,21 @@ To configure the SSO Site Name parameter:
 
 <p><em>Logout</em></p>
 
-<h4 id="passcodebypass-1" class="anchor"><a class="heading-anchor" href="#passcodebypass-1"><span></span></a>Passcode Bypass</h4>
+<h4 id="passcode" class="anchor"><a class="heading-anchor" href="#passcode"><span></span></a>Passcode</h4>
 
 <p>If the user cannot login to the device (e.g. SSO server is down) or forgot their SSO login credentials, the administrator supplies the passcode for the user to enter on the device to bypass the SSO login. The passcode is set with an associated group name through <a href="#ssointegration">SSO integration</a> under the <strong>Enterprise Login Screen Mobile Client</strong> section.</p>
 
-To login, in the ELS screen tap the menu at the top right, select **Sign in with Passcode** and enter the passcode.
-<!-- 
-<img alt="image" style="height:350px" src="els-syslogin.png"/>
+<p>To bypass the SSO login screen, in the ELS screen tap the menu at the top right, select <strong>Sign in with Passcode</strong> and enter the passcode supplied by the administrator.</p>
 
-_System login to bypass SSO_ -->
+<p><img alt="image" style="height:350px" src="passcode-signin.jpg"></p>
+
+<p><em>Passcode bypass sign in</em> </p>
 
 <p>This checks in the user as "passcode_" followed by the group name as displayed in the Mobile Devices dashboard in the "Checked Out By" column. </p>
+
+<p><img alt="image" style="height:350px" src="passcode-dashboard.jpg"></p>
+
+<p><em>Checked in user from entering passcode</em> </p>
 
 <hr>
 
@@ -888,14 +923,27 @@ _System login to bypass SSO_ -->
 
 
 <ul>
-<li><strong>Site -</strong> Enter the site name</li>
+<li><strong>Site -</strong> site name</li>
 
-<li><strong>Timezone -</strong> Select the local time zone of the site</li>
+<li><strong>Start IP Address -</strong> start IP address for range of IP addresses assigned to the site; <a href="../config/#devicetositeassignment">IP Address Range Configuration</a> must be enabled.</li>
 
-<li><strong>Scheduled Report Time -</strong> Select the local time for the <a href="#endofdaydevicesummary">End of Day</a> report to be generated</li>
+<li><strong>End IP Address -</strong> end IP address for range of IP addresses assigned to the site; <a href="../config/#devicetositeassignment">IP Address Range Configuration</a> must be enabled.</li>
 
-<li><strong>Email subscribed -</strong> If enabled, sends an email with the End of Day report to designated managers and administrators * <strong>Email List -</strong> Enter the email addresses of the recipients to receive the End of Day report, each email address separated by a comma
-<img alt="image" style="height:400px" src="add-site-manual.png"></li></ul>
+<li><strong>Timezone -</strong> select the local time zone of the site</li>
+
+<li><strong>Email subscribed -</strong> if enabled, sends an email with the <a href="../dashboard/#endofdaydevicesummary">End of Day snapshot report</a> to designated managers and administrators 
+
+
+<ul>
+<li><strong>Scheduled Report Time -</strong> select the local time for the End of Day report to be generated, providing a snapshot device report at the specified time</li>
+
+<li><strong>Email List -</strong> email addresses of the recipients to receive the End of Day report, each email address separated by a comma</li></ul>
+</li>
+
+<li><strong>Email Criteria -</strong> select the device states to report for the <a href="../dashboard/#endofdaydevicesummary">End of Day snapshot report</a></li>
+
+<li><strong>Include Attachments -</strong> if enabled, sends report attachments to email as CSV files, 1 file per device state selected from the Email Criteria
+<img alt="image" style="height:400px" src="add-site-manual.jpg"></li></ul>
 </li>
 
 <li>Click <strong>Confirm</strong>. The new site is added.</li>
@@ -914,7 +962,7 @@ _System login to bypass SSO_ -->
 <img alt="image" style="" src="manage-site.png"></li>
 
 <li>Select <strong>Upload CSV</strong> and click <strong>Continue.</strong>
-<img alt="image" style="height:250px" src="add-csv.png"></li>
+<img alt="image" style="height:200px" src="add-csv.png"></li>
 
 <li>Click <strong>Select files</strong> and browse to the desired .CSV file, or drag and drop the .CSV file.
 <img alt="image" style="height:250px" src="add-select-csv.png"></li>
@@ -944,14 +992,21 @@ _System login to bypass SSO_ -->
 
 
 <ul>
-<li><strong>Time Zone -</strong> Select the local time zone of the site</li>
+<li><strong>Timezone -</strong> select the local time zone of the site</li>
 
-<li><strong>Scheduled Report Time -</strong> Select the local time for the <a href="#endofdaydevicesummary">End of Day</a> report to be generated</li>
+<li><strong>Email subscribed -</strong> if enabled, sends an email with the <a href="../dashboard/#endofdaydevicesummary">End of Day snapshot report</a> to designated managers and administrators 
 
-<li><strong>Email subscribed -</strong> If enabled, sends an email with the End of Day report to designated managers and administrators</li>
 
-<li><strong>Email List -</strong> Enter the email addresses of the recipients to receive the End of Day report, each email address separated by a comma
-<img alt="image" style="height:400px" src="modify-site-manual.png"></li></ul>
+<ul>
+<li><strong>Scheduled Report Time -</strong> select the local time for the End of Day report to be generated, providing a snapshot device report at the specified time</li>
+
+<li><strong>Email List -</strong> email addresses of the recipients to receive the End of Day report, each email address separated by a comma</li></ul>
+</li>
+
+<li><strong>Email Criteria -</strong> select the device states to report for the <a href="../dashboard/#endofdaydevicesummary">End of Day snapshot report</a></li>
+
+<li><strong>Include Attachments -</strong> if enabled, sends report attachments to email as CSV files, 1 file per device state selected from the Email Criteria
+<img alt="image" style="height:400px" src="modify-site-manual.jpg"></li></ul>
 </li>
 
 <li>Click <strong>Confirm</strong>. The site is updated.</li>
@@ -968,9 +1023,6 @@ _System login to bypass SSO_ -->
 
 <li>Click <strong>Manage.</strong> From the dropdown, select <strong>Modify.</strong>
 <img alt="image" style="" src="manage-site.png"></li>
-
-<li>Select <strong>Upload CSV</strong> and click <strong>Continue.</strong>
-<img alt="image" style="height:200px" src="modify-csv.png"></li>
 
 <li>Click <strong>Select files</strong> and browse to the desired .CSV file, or drag and drop the .CSV file.
 <img alt="image" style="height:250px" src="modify-select-csv.png"></li>
@@ -1541,7 +1593,7 @@ When modifying the .CSV file, keep the header information intact and replace the
 <li>Under Settings, click <strong>Registration.</strong></li>
 </ol>
 
-<p><img alt="image" style="height:350px" src="registration.png"></p>
+<p><img alt="image" style="height:350px" src="registration.jpg"></p>
 
 <p><em>Registration screen</em></p>
 
@@ -1556,11 +1608,11 @@ When modifying the .CSV file, keep the header information intact and replace the
 <p>Shortcut links:</p>
 
 <ul>
-<li><strong>Add or modify Mobile Devices -</strong> Opens <em>Dashboard &gt; <a href="#mobiledevices">Mobile Devices</a></em> view from the left menu in the web portal.</li>
+<li><strong>Add or modify mobile devices -</strong> Opens <em>Dashboard &gt; <a href="#mobiledevices">Mobile Devices</a></em> view from the left menu in the web portal.</li>
 
-<li><strong>Add or modify Access Points -</strong> Opens <em>Dashboard &gt; Access Points</em> view from the left menu in the web portal.</li>
+<li><strong>Add or modify access points -</strong> Opens <em>Dashboard &gt; Access Points</em> view from the left menu in the web portal.</li>
 
-<li><strong>Add or modify Sites -</strong> Opens <em>Dashboard &gt; Sites</em> view from the left menu in the web portal.</li>
+<li><strong>Add or modify sites -</strong> Opens <em>Dashboard &gt; Sites</em> view from the left menu in the web portal.</li>
 </ul>
 
 <h3 id="devicetositeassignment" class="anchor"><a class="heading-anchor" href="#devicetositeassignment"><span></span></a>Device-to-Site Assignment</h3>
@@ -1575,7 +1627,7 @@ When modifying the .CSV file, keep the header information intact and replace the
 <li>Click <strong>Settings</strong> from the left menu.</li>
 
 <li>Under Settings, click <strong>Registration.</strong>
-<img alt="image" style="height:400px" src="device-to-site.png"></li>
+<img alt="image" style="height:400px" src="device-to-site.jpg"></li>
 
 <li>Under <strong>Device-to-Site Assignment.</strong> select the desired device registration method: <br>
 a. <strong>Manually assign devices to a site via CSV upload (default)</strong><br>Manually assign sites to devices by uploading a CSV file that includes the site name for the device to be assigned, see <a href="#importdevices">Import Devices</a>. <br>

@@ -1556,7 +1556,19 @@ To perform a device search:</p>
 
 <h3 id="eventsbysite" class="anchor"><a class="heading-anchor" href="#eventsbysite"><span></span></a>Events By Site</h3>
 
-<p><em>Events By Site</em> provides a report of event changes based on the transition of device status/states (e.g. disconnected, found, not found, low battery, etc.) per site within the date range selected. An event is considered as a state change from one device state to another, regardless of the duration the device remains in the new state. The events for this report are based on the device finding process, device charging and low battery. The device count for the states are cumulative, incrementing each time a device reaches that state. Data is collected every day at 3 am America/Chicago time (CST) no matter which region the user is located.</p>
+<p><em>Events By Site</em> provides a report of event changes witihin a site based on the transition of device states (e.g. disconnected, found, not found, low battery, etc.) when moving from one state to another. A single date or date range may be selected for the report. The site report can be exported as a CSV file.</p>
+
+<p>An event is a transition from one device state to another, regardless of the duration the device remains in the new state. The events for this report are based on the device finding process, device charging, low battery and connection state. The device count for the states are cumulative, incrementing each time a device reaches that state. Data is collected every day at 3 am America/Chicago time (CST) no matter which region the user is located. To view event and device details click on the link for the respective device count in the table. </p>
+
+<p>The "To Be Found" and "Found" states additionally include the following:</p>
+
+<ul>
+<li>Breakdown of automatic vs manual event based on device state - specifies whether the event was automatically (via <a href="../config/#automation">automation rules</a>) or manually triggered (e.g. user changes states during the finding process), categorized by device state transition</li>
+
+<li>Average time - average time elapsed across all devices while they were in the "To Be Found" or "Found" state</li>
+
+<li>Total time - total time elapsed across all devices while they were in the "To Be Found" or "Found" state</li>
+</ul>
 
 <p>To view <em>Events By Site:</em></p>
 
@@ -1572,14 +1584,14 @@ To perform a device search:</p>
 <li>The data is displayed.</li>
 
 <li>To download the displayed data in .CSV format, click <strong>Export Data.</strong>
-<img alt="image" style="height:300px" src="report-events-by-site.png"></li>
+<img alt="image" style="height:450px" src="report-events-by-site.jpg"></li>
 </ol>
 
 <p>Data displayed (all device counts are cumulative):</p>
 
-<ul>
-<li><strong>Dashboard Views -</strong> Number of times the manager has viewed the dashboard, providing an indication on how often managers are tracking devices.</li>
+<!--- **Dashboard Views -** Number of times the manager has viewed the dashboard, providing an indication on how often managers are tracking devices.-->
 
+<ul>
 <li><strong>Disconnected –</strong> Number of devices that lost connection to the server at one point in time for at least 12 minutes or more.</li>
 
 <li><strong>To Be Found –</strong> Number of devices that were marked "To Be Found," which initiated the device search. This provides an indication on how often devices are becoming misplaced at a site.</li>
@@ -1663,7 +1675,7 @@ Data displayed (all device counts are cumulative):
 
 <h3 id="endofdaydevicesummary" class="anchor"><a class="heading-anchor" href="#endofdaydevicesummary"><span></span></a>End of Day Device Summary</h3>
 
-<p><em>End of Day Device Summary</em> provides a snapshot of device counts based on their status at that moment in time (e.g. disconnected, found, not found, low battery, etc.). The data is <em>not</em> cumulative. This summary report helps to identify and track the accountability of devices at the end of the day on a daily basis. From the web portal, administrators can display data based on site location or display data across all sites.</p>
+<p><em>End of Day Device Summary</em> provides a snapshot of device counts based on their state at that moment in time (e.g. disconnected, found, not found, low battery, etc.). The data is <em>not</em> cumulative. This summary report helps to identify and track the accountability of devices at the end of the day on a daily basis. From the web portal, administrators can display data based on site location or display data across all sites.</p>
 
 <!--
 Data is not available for the current date until the _scheduledReportTime_ _end of day" time is reached.
@@ -1671,7 +1683,7 @@ The report is generated once a day on a daily basis based on the _scheduledRepor
 when the [site is registered](../config/#managesites). The end of day summary report is viewable from the web portal, or an email can automatically be sent to designated managers or administrators.
 -->
 
-<p><em>End of Day Device Summary</em> reports can be sent by email to administrators, managers or other users. The email recipients and scheduled report time are configured either <a href="../config/#managesites">manually or through .CSV file import</a>. The report is sent by email each day when the specified scheduled report time is reached. It is sent from email address <code>zdtrksupport@zebra.com</code> to the list of email recipients. Each site can be configured with different scheduled report times. Data is not available for the current date until the scheduled report time elapses.</p>
+<p><em>End of Day Device Summary</em> reports can be sent by email to administrators, managers or other users. The following are configured either <a href="../config/#managesites">manually or through .CSV file import</a>: email subscription, scheduled report time, email recipients, report criteria (based on device states), and option to include email attachments. The report is sent by email each day when the specified scheduled report time is reached. It is sent from email address <code>zdtrksupport@zebra.com</code> to the list of email recipients. Each site can be configured with different scheduled report times. Data is not available for the current date until the scheduled report time elapses.</p>
 
 <p>To view <em>End of Day Device Summary:</em></p>
 
@@ -1688,19 +1700,20 @@ when the [site is registered](../config/#managesites). The end of day summary re
 
 <li><p>To download the displayed data in .CSV format, click <strong>Export Data.</strong></p>
 
-<p><img alt="image" style="height:350px" src="report-end-of-day-device-summary.png"></p></li>
+<p><img alt="image" style="height:450px" src="report-end-of-day-device-summary.jpg"></p></li>
 </ol>
 
-<p>To identify the devices that are still checked out, see <a href="#endofdaydevicedetail">End of Day Device Detail</a>.</p>
+<!--
+To identify the devices that are still checked out, see [End of Day Device Detail](#endofdaydevicedetail).-->
 
 <p>Data displayed:</p>
 
 <ul>
-<li><strong>Site -</strong> Site name</li>
+<li><strong>Site -</strong> Name of site</li>
 
-<li><strong>Registered -</strong> Number of devices registered with the cloud server</li>
+<li><strong>Total Devices -</strong> Number of devices registered with the cloud server at the site</li>
 
-<li><strong>Connected -</strong> Number of devices connected to the server</li>
+<li><strong>Never Connected -</strong> Number of devices that have never connected to the server</li>
 
 <li><strong>Disconnected -</strong> Number of devices that lost connection to the server</li>
 
@@ -1708,9 +1721,19 @@ when the [site is registered](../config/#managesites). The end of day summary re
 
 <li><strong>Low Battery -</strong> Number of devices that have reached the low power threshold, requiring attention for it to be charged prior to battery depletion.</li>
 
-<li><strong>Charging -</strong> Number of devices currently charging and therefore not in use</li>
+<li><strong>Charging -</strong> Number of devices charging </li>
 
-<li><strong>To Be Found -</strong> Number of devices set to "To Be Found"</li>
+<li><strong>Discharging -</strong> Number of devices discharging </li>
+
+<li><strong>Idle -</strong> Number of devices that are not charging and are in the idle state i.e. have not been moved for the duration of the Device Idle threshold</li>
+
+<li><strong>To Be Found -</strong> Number of devices set to "To Be Found" to initiate the finding process</li>
+
+<li><strong>Being Found -</strong> Number of devices in the process of being found</li>
+
+<li><strong>Cannot Find -</strong> Number of devices that could not be found</li>
+
+<li><strong>Found -</strong> Number of devices that were lost or misplaced, then found</li>
 </ul>
 
 <!-- NOTE: REMOVED FROM v5.1
