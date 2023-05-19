@@ -295,7 +295,7 @@
 
 
 <ul>
-<li><a href="../config/#sso">Integrate SSO</a></li>
+<li><a href="../config/#singlesignonsso">Integrate SSO</a></li>
 
 <li><a href="../config/#manageusers">Manage Users</a></li>
 
@@ -372,7 +372,7 @@
 
 <hr>
 
-<h2 id="sso" class="anchor"><a class="heading-anchor" href="#sso"><span></span></a>SSO</h2>
+<h2 id="singlesignonsso" class="anchor"><a class="heading-anchor" href="#singlesignonsso"><span></span></a>Single Sign-On (SSO)</h2>
 
 <p>Optionally, integrate single sign-on (SSO) with Device Tracker to authenticate users with their corporate SSO login credentials to gain access to the device. Furthermore, SSO can be mapped to provide role-based access to Device Tracker. There are 3 different levels of Device Tracker access based on user role: administrator, manager, or end user. SSO activation allows administrators and managers to login to Device Tracker with their SSO credentials and gain access to their respective <a href="../dashboard">dashboards</a> on the device and web portal. For other users, there is no change in Device Tracker client app access when logging in with their SSO credentials - after logging in, the <a href="../use/#markdevicetofind">To Be Found</a> screen is seen when the client app is launched. SSO credentials are <em>not</em> used for user accountability, only for user authentication to gain device access. <strong><em>Only OAuth 2.0 with PKCE is supported for SSO integration.</em></strong><!-- **_Only OAuth 2.0 using Mutual-TLS client certificates for client authentication is supported for SSO integration._** --></p>
 
@@ -416,7 +416,7 @@
 <p><code>Openssl pkcs12 -in ssl_certificate.pfx -clcerts -nokeys -out dtrk_sso_public.crt</code></p></li>
 </ol>
 
-<p>Action is required to <strong>activate SSO for integration with Device Tracker</strong> after Zebra services enables SSO in the cloud server. <em>Only activate SSO when all devices have Device Tracker 5.1 or higher.</em> Follow the <a href="#ssointegration">SSO integration</a> steps and then <a href="#manageusers">create SSO users</a>. When SSO is activated, only SSO users can login; non-SSO users cannot login.</p>
+<p>Action is required to <strong>activate SSO for integration with Device Tracker</strong> after Zebra services enables SSO in the cloud server. <em>Only activate SSO when all devices have Device Tracker 5.1 or higher.</em> Follow the <a href="#ssointegration">SSO integration</a> steps and then <a href="#manageusers">create SSO users</a> if role-based mapping is not in use. When SSO is activated, only SSO users can login; non-SSO users cannot login.</p>
 
 <p><strong>After activating SSO,</strong> if <a href="#checkincheckoutdevice">Checkin/Checkout</a> is enabled, <em>user accountability does not take place and there is no difference in behavior compared to if this option is disabled.</em></p>
 
@@ -457,22 +457,30 @@
 
 <li><p>Enter the appropriate information for all fields based on the SSO server settings. If using role-based mapping, enter the information under the <strong>Map SSO Provided Responses</strong> section based on your SSO parameters:</p>
 
-<p></p><ul>
-<li><strong>UserID Parameter -</strong> user ID or user name parameter that is configured in SSO and returned from the SSO response upon authenticating the user</li></ul><p></p>
+<ul>
+<li><strong>UserID Parameter -</strong> user ID or user name parameter that is configured in SSO and returned from the SSO response upon authenticating the user</li>
 
-<p></p></li><li><strong>Use SSO Defined Roles -</strong> if enabled, uses role-based mapping to automatically map the administrator and manager user roles based on roles defined in your SSO. If disabled, the admin and manager users must be defined in the <a href="../config/#manageusers">Manage Users</a> section. Zebra recommends to enable this option to leverage the roles that exist through your SSO and avoid the need to manage users through Device Tracker.</li><p></p>
+<li><strong>Use SSO Defined Roles -</strong> if enabled, uses role-based mapping to automatically map the administrator and manager user roles based on roles defined in your SSO. If disabled, the admin and manager users must be defined in the <a href="../config/#manageusers">Manage Users</a> section. Zebra recommends to enable this option to leverage the roles that exist through your SSO and avoid the need to manage users through Device Tracker.</li>
 
-<p></p><li><strong>Site Location -</strong> site parameter that determines the location or site of the user</li><p></p>
+<li><strong>Site Location -</strong> site parameter that determines the location or site of the user</li>
 
-<p></p><li><strong>Admin Role Parameter -</strong> parameter that identifies whether the user is an admin</li><p></p>
+<li><strong>Admin Role Parameter -</strong> parameter that identifies whether the user is an admin</li>
 
-<p></p><li><strong>Admin Roles -</strong> names of the admin roles</li><p></p>
+<li><strong>Admin Roles -</strong> names of the admin roles</li>
 
-<p></p><li><strong>Manager Role Parameter -</strong> parameter that identifies whether the user is a manager</li><p></p>
+<li><strong>Manager Role Parameter -</strong> parameter that identifies whether the user is a manager</li>
 
-<p></p><li><strong>Manager Roles -</strong> names of the manager roles</li><p></p>
+<li><strong>Manager Roles -</strong> names of the manager roles
+<img alt="image" style="height:500px" src="sso-map.jpg"></li></ul></li>
 
-<li><p>Register the following:</p></li>
+<li><p>Register the following by entering the Client ID:</p>
+
+<ul>
+<li>Web Portal</li>
+
+<li>Device Tracker Mobile Client</li>
+
+<li>Enterprise Login Screen Mobile Client</li></ul></li>
 
 <li><p>Scroll to the bottom of the page and click <strong>Validate.</strong></p></li>
 
@@ -511,7 +519,7 @@ To configure the SSO Site Name parameter:
 
 <p>Login bypass allows a user to gain device access (through Enterprise Login Screen) and bypass the SSO login in unexpected situations when they are not able to login with their SSO credentials, such as if the SSO server is down or the WiFi network is down. The administrator creates a passcode with an associated group name and supplies this passcode to the user to enter into the device for access to be granted.</p>
 
-<p>Requirements for Login Bypass:</p>
+<p>Requirements for login bypass:</p>
 
 <ul>
 <li>SSO must be activated</li>
@@ -541,7 +549,7 @@ To configure the SSO Site Name parameter:
 <li><strong>Passcode -</strong> the passcode cannot contain special characters, such as <code>: = # { } [ ] : ; / \</code></li></ul>
 </li>
 
-<li>Click <strong>Confirm.</strong>   </li>
+<li>Click <strong>Confirm.</strong></li>
 </ol>
 
 <table>
@@ -557,7 +565,7 @@ To configure the SSO Site Name parameter:
 
 <h3 id="enterpriseloginscreen" class="anchor"><a class="heading-anchor" href="#enterpriseloginscreen"><span></span></a>Enterprise Login Screen</h3>
 
-<p><em>Enterprise Login Screen (ELS)</em> is a separate mobile application that works in conjunction with SSO. It blocks device access until the user logs in with their SSO credentials. These login credentials are passed to Device Tracker for accountability and the appropriate Device Tracker screen is displayed to the users based on their role: for administrators, the admin dashboard displays data across all sites in the organization; for managers, the manager dashboard displays data specific for their assigned site, and all other users are presented with the “To Be Found” screen listing devices flagged for retrieval.</p>
+<p><em>Enterprise Login Screen (ELS)</em> is a separate mobile application that works in conjunction with SSO. It blocks device access until the user logs in with their SSO credentials. These login credentials are passed to Device Tracker for accountability and the appropriate Device Tracker screen is displayed to the users based on their role: for administrators, the admin dashboard displays data across all sites in the organization; for managers, the manager dashboard displays data specific for their assigned site, and all other users are presented with the <strong>To Be Found</strong> screen listing devices flagged for retrieval.</p>
 
 <p>When ELS is launched, it grants access to the custom SSO login screen. After the user logs in with their SSO credentials, the user is associated to the device for accountability. When the user logs out, the user is disassociated from the device and the ELS screen is displayed, preventing access to the device until the user logs in. <!-- See <a href="#setup">Install &amp; Setup</a> for instructions to install ELS.--></p>
 
@@ -615,13 +623,13 @@ To configure the SSO Site Name parameter:
 
 <p><img alt="image" style="height:350px" src="passcode-signin.jpg"></p>
 
-<p><em>Passcode bypass sign in</em> </p>
+<p><em>Login bypass sign in with passcode</em></p>
 
-<p>This checks in the user as "passcode_" followed by the group name as displayed in the Mobile Devices dashboard in the "Checked Out By" column. </p>
+<p>This checks in the user as "passcode_" followed by the group name as displayed in the Mobile Devices dashboard in the "Checked Out By" column.</p>
 
 <p><img alt="image" style="height:350px" src="passcode-dashboard.jpg"></p>
 
-<p><em>Checked in user from entering passcode</em> </p>
+<p><em>Checked in user from entering passcode</em></p>
 
 <hr>
 
@@ -632,7 +640,7 @@ To configure the SSO Site Name parameter:
 <ul>
 <li><strong>Non-SSO -</strong> If SSO is not activated, only non-SSO users can be added, requiring an email address as the user ID. When logging in for the first time, the user must click <strong>Forgot your password</strong> in the web portal login screen. After entering the user email address, an email message is sent with a link for the user to set their password.</li>
 
-<li><strong>SSO -</strong> If <a href="#sso">SSO</a> is activated, only SSO users can be added based on the same user ID as that given by the SSO provider.</li>
+<li><strong>SSO -</strong> If <a href="#singlesignonsso">SSO</a> is activated, only SSO users can be added based on the same user ID as that given by the SSO provider.</li>
 </ul>
 
 <p>Each user is designated a Device Tracker role: manager or admin. For managers, a site must be assigned for the manager to oversee.</p>
@@ -931,7 +939,7 @@ To configure the SSO Site Name parameter:
 
 <li><strong>Timezone -</strong> select the local time zone of the site</li>
 
-<li><strong>Email subscribed -</strong> if enabled, sends an email with the <a href="../dashboard/#endofdaydevicesummary">End of Day snapshot report</a> to designated managers and administrators 
+<li><strong>Email subscribed -</strong> if enabled, sends an email with the <a href="../dashboard/#endofdaydevicesummary">End of Day snapshot report</a> to designated managers and administrators
 
 
 <ul>
@@ -994,7 +1002,7 @@ To configure the SSO Site Name parameter:
 <ul>
 <li><strong>Timezone -</strong> select the local time zone of the site</li>
 
-<li><strong>Email subscribed -</strong> if enabled, sends an email with the <a href="../dashboard/#endofdaydevicesummary">End of Day snapshot report</a> to designated managers and administrators 
+<li><strong>Email subscribed -</strong> if enabled, sends an email with the <a href="../dashboard/#endofdaydevicesummary">End of Day snapshot report</a> to designated managers and administrators
 
 
 <ul>
@@ -1636,9 +1644,9 @@ c. <strong>IP Address Range Configuration</strong><br>Allow an IP address range 
 
 
 <ul>
-<li>If a device is previously within range of a site and moves to another site whose range is not specified, it remains assigned to the original site. </li>
+<li>If a device is previously within range of a site and moves to another site whose range is not specified, it remains assigned to the original site.</li>
 
-<li>If a device is disconnected, it remains assigned to the previous site. </li></ul>
+<li>If a device is disconnected, it remains assigned to the previous site.</li></ul>
 </li>
 
 <li>Click <strong>Save.</strong></li>
@@ -1718,7 +1726,7 @@ c. <strong>IP Address Range Configuration</strong><br>Allow an IP address range 
 
 <h2 id="automation" class="anchor"><a class="heading-anchor" href="#automation"><span></span></a>Automation</h2>
 
-<p>Device Tracker can be configured to automatically change device states when specific conditions are met or certain thresholds are reached. For example, devices can be automatically marked "To Be Found" if they are checked out, low in battery, and not charging. This proactively allows the device to be located prior to completely losing battery power and while potentially actively in use, preventing the need for an administrator to continually monitor devices and manually mark the devices.</p>
+<p>Device Tracker can be configured to automatically change device states when specific conditions are met or certain thresholds are reached. For example, devices can be automatically marked <strong>To Be Found</strong> if they are checked out, low in battery, and not charging. This proactively allows the device to be located prior to completely losing battery power and while potentially actively in use, preventing the need for an administrator to continually monitor devices and manually mark the devices.</p>
 
 <p>The device must be connected to the Device Tracker server to receive automation settings. Changes to automation settings on the server cannot be applied to disconnected devices.</p>
 
@@ -1743,7 +1751,7 @@ c. <strong>IP Address Range Configuration</strong><br>Allow an IP address range 
 
 <li><strong>Maximum checkout time -</strong> Set the maximum checkout time (in hours). When the set time is reached, the device is flagged in red on the dashboard for visibility to the administrator. See <a href="#maximumcheckouttime">Maximum Checkout Time</a>.</li></ul></li>
 
-<li><p><strong>Automatically Mark Devices "To Be Found" -</strong> Enable this option and select the state(s) or combination of states for the device to be automatically marked "To be Found" when the selected state(s) is reached, rather than performing this manually. If a combination of states are selected, <em>all conditions</em> must be met for the device to be automatically marked "To Be Found." If the selected state(s) is not reached, the device remains off the "To Be Found" list. Available states and combination of states:</p>
+<li><p><strong>Automatically Mark Devices "To Be Found" -</strong> Enable this option and select the state(s) or combination of states for the device to be automatically marked "To be Found" when the selected state(s) is reached, rather than performing this manually. If a combination of states are selected, <em>all conditions</em> must be met for the device to be automatically marked <strong>To Be Found.</strong> If the selected state(s) is not reached, the device remains off the <strong>To Be Found</strong> list. Available states and combination of states:</p>
 
 <ul>
 <li>Checked out, low battery and not charging</li>
@@ -1762,17 +1770,19 @@ c. <strong>IP Address Range Configuration</strong><br>Allow an IP address range 
 
 <li>Disconnected</li></ul>
 
-<p>After a device has been automatically marked "To Be Found" based on the above selection, if the device state changes and no longer satisfies the selected state(s), then "To Be Found" is removed from the device.</p>
+<p>After a device has been automatically marked <strong>To Be Found</strong> based on the above selection, if the device state changes and no longer satisfies the selected state(s), then <strong>To Be Found</strong> is removed from the device.</p></li>
+</ol>
 
 <blockquote>
-  <p><strong>Important:</strong> During the finding process, before marking the device as "Found," <strong>make sure one of the selected conditions is NOT satisfied</strong> (e.g. checkin the device if "Checked out" is selected, or charge the device if "not charging" is selected). Otherwise, the device will return back to the "To Be Found" state after it is marked "Found."</p>
-</blockquote></li>
+  <p><strong>Important:</strong> During the finding process, before marking the device as <strong>Found,</strong> <i><strong>make sure one of the selected conditions is NOT satisfied</strong></i> (e.g. checkin the device if <strong>Checked out</strong> is selected, or charge the device if "not charging" is selected). Otherwise, the device will return back to the <strong>To Be Found</strong> state after it is marked <strong>Found.</strong></p>
+</blockquote>
 
-<li><p><strong>Automatically place device "In Service" when marked "Found" -</strong> Enable this option to automatically place the device back “In Service” after it is located and marked “Found”. This eliminates the need to manually perform this action.</p></li>
+<ol>
+<li><strong>Automatically place device "In Service" when marked "Found" -</strong> Enable this option to automatically place the device back “In Service” after it is located and marked <strong>Found.</strong> This eliminates the need to manually perform this action.</li>
 
-<li><p><strong>Automatically set "To Be Found" device to "In Service" upon checkout" -</strong> Enable this option to automatically place the device back "In Service" when a device in the "To Be Found" state is checked out. There is no need for the device to remain in the "To Be Found" state since the user has checked out the device.</p></li>
+<li><strong>Automatically set "To Be Found" device to "In Service" upon checkout" -</strong> Enable this option to automatically place the device back <strong>In Service</strong> when a device in the <strong>To Be Found</strong> state is checked out. There is no need for the device to remain in the <strong>To Be Found</strong> state since the user has checked out the device.</li>
 
-<li><p>Click on <strong>Save.</strong></p></li>
+<li>Click on <strong>Save.</strong></li>
 </ol>
 
 <h2 id="lostdevicenearby" class="anchor"><a class="heading-anchor" href="#lostdevicenearby"><span></span></a>Lost Device Nearby</h2>

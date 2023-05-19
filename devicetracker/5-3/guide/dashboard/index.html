@@ -1560,14 +1560,16 @@ To perform a device search:</p>
 
 <p>An event is a transition from one device state to another, regardless of the duration the device remains in the new state. The events for this report are based on the device finding process, device charging, low battery and connection state. The device count for the states are cumulative, incrementing each time a device reaches that state. Data is collected every day at 3 am America/Chicago time (CST) no matter which region the user is located. To view event and device details click on the link for the respective device count in the table. </p>
 
-<p>The "To Be Found" and "Found" states additionally include the following:</p>
+<p><img alt="image" style="height:450px" src="report-events-by-site.jpg"></p>
+
+<p>Details for the <strong>To Be Found</strong> and <strong>Found</strong> states additionally include the following:</p>
 
 <ul>
-<li>Breakdown of automatic vs manual event based on device state - specifies whether the event was automatically (via <a href="../config/#automation">automation rules</a>) or manually triggered (e.g. user changes states during the finding process), categorized by device state transition</li>
+<li>Breakdown of <strong>automatic vs manual events</strong> based on device state - specifies whether the event was automatically (via <a href="../config/#automation">automation rules</a>) or manually triggered (e.g. user changes states during the finding process), categorized by device state transition</li>
 
-<li>Average time - average time elapsed across all devices while they were in the "To Be Found" or "Found" state</li>
+<li><strong>Average time -</strong> average time elapsed across all devices while they were in the <strong>To Be Found</strong> or <strong>Found</strong> state</li>
 
-<li>Total time - total time elapsed across all devices while they were in the "To Be Found" or "Found" state</li>
+<li><strong>Total time -</strong> total time elapsed across all devices while they were in the <strong>To Be Found</strong> or <strong>Found</strong> state</li>
 </ul>
 
 <p>To view <em>Events By Site:</em></p>
@@ -1583,8 +1585,7 @@ To perform a device search:</p>
 
 <li>The data is displayed.</li>
 
-<li>To download the displayed data in .CSV format, click <strong>Export Data.</strong>
-<img alt="image" style="height:450px" src="report-events-by-site.jpg"></li>
+<li>To download the displayed data in .CSV format, click <strong>Export Data.</strong></li>
 </ol>
 
 <p>Data displayed (all device counts are cumulative):</p>
@@ -1683,7 +1684,7 @@ The report is generated once a day on a daily basis based on the _scheduledRepor
 when the [site is registered](../config/#managesites). The end of day summary report is viewable from the web portal, or an email can automatically be sent to designated managers or administrators.
 -->
 
-<p><em>End of Day Device Summary</em> reports can be sent by email to administrators, managers or other users. The following are configured either <a href="../config/#managesites">manually or through .CSV file import</a>: email subscription, scheduled report time, email recipients, report criteria (based on device states), and option to include email attachments. The report is sent by email each day when the specified scheduled report time is reached. It is sent from email address <code>zdtrksupport@zebra.com</code> to the list of email recipients. Each site can be configured with different scheduled report times. Data is not available for the current date until the scheduled report time elapses.</p>
+<p><em>End of Day Device Summary</em> reports can be sent by email to administrators, managers or other users. The following are configured either <a href="../config/#managesites">manually or through .CSV file import</a>: email subscription, scheduled report time, email recipients, report criteria (based on device states), and option to include email attachments. The report is sent by email each day when the specified scheduled report time is reached. It is sent from email address <code>zdtrksupport@zebra.com</code> to the list of email recipients specified. Each site can be configured with different scheduled report times. Data is not available for the current date until the scheduled report time elapses.</p>
 
 <p>To view <em>End of Day Device Summary:</em></p>
 
