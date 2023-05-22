@@ -240,14 +240,15 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Device Tracker restricts user access to the device with either of the following optional features:</p>
+<p>Device Tracker can block user access to the device with either of the following optional features for <a href="../config/#checkincheckoutdevice">device checkout</a>:</p>
 
 <ul>
-<li><a href="../config/#checkincheckoutdevice">Checkin/Checkout</a> - If enabled, the end user is presented with the <a href="#devicecheckout">Checkout</a> screen, prompting the user to scan their user barcode to gain device access.</li>
+<li><a href="../config/#checkincheckoutdevice">User barcode scan</a> - If enabled, the end user is presented with the <a href="#devicecheckout">Checkout</a> screen, prompting the user to scan their user barcode to gain device access.</li>
 
-<li><a href="../config/#singlesignonsso">SSO</a> - If enabled, the end user logs in with their SSO credentials to gain access to the device.
-Device Tracker operation and functionality is based on the <a href="../config/#overview">user role</a> of the user logged in.</li>
+<li><a href="../config/#singlesignonsso">SSO signin</a> - If enabled, the user logs in with their SSO credentials to gain access to the device.</li>
 </ul>
+
+<p>Device Tracker operation and functionality is based on the <a href="../config/#overview">user role</a> of the user logged in.</p>
 
 <p>To <a href="#finddevice">find a device</a>, the misplaced device must be <a href="#markdevicetofind">marked for retrieval</a> by the administrator or manager. The “finding” device (the device performing the search) is used to determine the distance the user is located in relation to the “misplaced” device (the device to be found) using the visual proximity meter. When a device is found, <a href="#decommissionrecommissiondevice">recommission the device</a> to place it back into the active device pool. Alternatively, <a href="#decommissionrecommissiondevice">decommission the device</a> if it needs to be removed from the active device pool.</p>
 
@@ -279,13 +280,98 @@ This section discusses the actions that can be taken to track devices:
 - **[Add/Edit a Note](#addeditnote) -** add device-specific comments, e.g. to identify device issues.
 -->
 
+<hr>
+
 <h2 id="devicecheckout" class="anchor"><a class="heading-anchor" href="#devicecheckout"><span></span></a>Device Checkout</h2>
 
-<p><a href="../config/#checkincheckoutdevice">Device Checkout</a> is an optional feature configured by the administrator. If enabled, the user is required to scan their barcode at the start of their work shift to checkout the device, then logout at the end of their work shift to checkin the device. The checkout screen is in kiosk mode, preventing the user from accessing the device until checkout is performed. When a device is checked-out, the user is associated with the particular device until the user checks in the device.</p>
+<p>Device Checkout is an optional feature configured by the administrator to block device access until a user performs one of the following on the device:</p>
 
-<p><strong>Note:</strong> For Android Q and higher, if "Display over other apps" permission is not granted, the user must manually launch the app once and grant this permission for checkout functionality to work properly.</p>
+<ul>
+<li>Signs in with SSO credentials</li>
 
-<h3 id="checkout" class="anchor"><a class="heading-anchor" href="#checkout"><span></span></a>Checkout</h3>
+<li>Scans a user barcode</li>
+</ul>
+
+<p><a href="../config/#checkincheckoutdevice">Checkin/checkout</a> must be enabled. The following sections describe how to use checkout using either of the above options.</p>
+
+<h3 id="sso" class="anchor"><a class="heading-anchor" href="#sso"><span></span></a>SSO</h3>
+
+<p>When <a href="../config/#singlesignonsso">single sign-on SSO</a> is activated and <a href="../config/#enterpriseloginscreen">Enterprise Login Screen</a> (ELS) is installed on the device, the user signs in to the device using SSO login credentials.</p>
+
+<h4 id="signin" class="anchor"><a class="heading-anchor" href="#signin"><span></span></a>Sign in</h4>
+
+<p>When SSO is activated and Enterprise Login Screen is installed on the device, users sign in to the device by entering their SSO login credentials. After successful sign in, the user is granted access to the device and is checked out with the user name returned by SSO for accountability.</p>
+
+<p>To sign in using SSO:</p>
+
+<ol>
+<li>In the Enterprise Login Screen, tap <strong>Sign in.</strong></li>
+
+<li>In the company SSO sign in screen, enter the user credentials and tap <strong>Sign in</strong> or the related button to signin.</li>
+</ol>
+
+<table>
+    <tbody><tr>
+        <td>
+            <img alt="image" style="height:350px" src="els.jpg">
+        </td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>
+            <img alt="image" style="height:350px" src="sso-zebra.png">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <i>Enterprise Login Screen</i>
+        </td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>
+            <i>Company SSO signin screen</i>
+        </td>
+    </tr>
+</tbody></table>
+
+<h4 id="passcode" class="anchor"><a class="heading-anchor" href="#passcode"><span></span></a>Passcode</h4>
+
+<p>If the user cannot sign in to the device, either due to an SSO signin failure or a network outage, the administrator can supply a <a href="../config/#enterpriseloginscreen">passcode</a> for the user to enter on the device to bypass the SSO login. The passcode is set with an associated passcode group name through <a href="#ssointegration">SSO integration</a> under the <strong>Enterprise Login Screen Mobile Client</strong> section.</p>
+
+<p>To bypass the SSO signin screen, in the ELS screen tap the menu at the top right, select <strong>Sign in with Passcode</strong> and enter the passcode supplied by the administrator.</p>
+
+<p><img alt="image" style="height:350px" src="passcode-signin.jpg"></p>
+
+<p><em>Enter bypass passcode</em></p>
+
+<p>This grants the user device access and checks out the user as "passcode_" followed by the passcode group name as displayed in the Mobile Devices dashboard in the <strong>Checked Out By</strong> column.</p>
+
+<p><img alt="image" style="height:350px" src="passcode-dashboard.jpg"></p>
+
+<p><em>Checked in user from entering passcode</em></p>
+
+<h4 id="signout" class="anchor"><a class="heading-anchor" href="#signout"><span></span></a>Signout</h4>
+
+<p>To signout of ELS, in Device Tracker tap the top right menu and select <strong>Sign out of Device.</strong> The user is signed out and the ELS screen appears for the next signin session.</p>
+
+<p><img alt="image" style="height:350px" src="els-signout.jpg"></p>
+
+<p><em>Signout of ELS</em></p>
+
+<p>On successful signout of ELS, the device is checked in and accountability is removed from Device Tracker.</p>
+
+<h3 id="userbarcode" class="anchor"><a class="heading-anchor" href="#userbarcode"><span></span></a>User Barcode</h3>
+
+<p>When using barcode scanning for checkout (SSO is not activated), the user is required to scan the user barcode at the start of their work shift to checkout the device, then checkin the device at the end of the work shift. The checkout screen blocks device access, preventing the user from accessing the device until checkout is performed. When a device is checked-out, the user is associated with the particular device until the user checks in the device.</p>
+
+<p>By default, if no barcode prefix is defined all barcodes are accepted. Specify a <a href="../config/#checkoutbarcodeprefix">checkout barcode prefix</a> to restrict checkout only to barcodes that begin with the specified prefix.</p>
+
+<p><strong>Note:</strong> </p>
+
+<ul>
+<li>For Android 10 and higher, if "Display over other apps" permission is not granted, the user must manually launch the app once and grant this permission for checkout functionality to work properly.</li>
+
+<li>If any other app also uses a screen overlay, the checkin/checkout feature may conflict with the other app. For example, this feature cannot be used with Zebra’s MotionWorks Proximity application.</li>
+</ul>
+
+<h4 id="checkout" class="anchor"><a class="heading-anchor" href="#checkout"><span></span></a>Checkout</h4>
 
 <p>Perform a device checkout at the start of a work shift as follows:</p>
 
@@ -302,10 +388,11 @@ This section discusses the actions that can be taken to track devices:
 <li><p>The user is now associated with the device. <br></p></li>
 </ol>
 
-<p><strong>Note:</strong> If Checkout is enabled, after a device is rebooted the Checkout screen may take up to one minute to be displayed.
-<br><br></p>
+<p><strong>Note:</strong> If Checkout is enabled, after a device is rebooted the Checkout screen may take up to one minute to be displayed.</p>
 
-<h3 id="checkin" class="anchor"><a class="heading-anchor" href="#checkin"><span></span></a>Check-In</h3>
+<p><br></p>
+
+<h4 id="checkin" class="anchor"><a class="heading-anchor" href="#checkin"><span></span></a>Check-In</h4>
 
 <p>Choose one of the following options to Check-In a device:</p>
 
@@ -366,6 +453,8 @@ This section discusses the actions that can be taken to track devices:
 <img alt="image" style="height:350px" src="device-details-1.png">
 <i>Manager/admin view to mark a device "To Be Found"</i></li>
 </ol>
+
+<hr>
 
 <h2 id="lostdevicenearby" class="anchor"><a class="heading-anchor" href="#lostdevicenearby"><span></span></a>Lost Device Nearby</h2>
 
@@ -443,6 +532,8 @@ When _Lost Device Nearby_ is enabled, the "To Be Found" screen displays 2 tabs:
 </ul>
 
 <p><strong>Note:</strong> Any <em>Lost Device Nearby</em> notifications are removed when Bluetooth beacons are no longer detected from the lost device for at least 5 minutes. This is due to the lost device no longer: (1) located within close proximity of the detecting device, (2) emitting Bluetooth beacons, or (3) in the "To Be Found" state.</p>
+
+<hr>
 
 <h2 id="finddevice" class="anchor"><a class="heading-anchor" href="#finddevice"><span></span></a>Find Device</h2>
 
@@ -599,6 +690,8 @@ When _Lost Device Nearby_ is enabled, the "To Be Found" screen displays 2 tabs:
 
 <li>Disable access to Android Settings by using an EMM or <a href="/ehs">Zebra Enterprise Home Screen</a>.</li>
 </ul>
+
+<hr>
 
 <h2 id="disablefinding" class="anchor"><a class="heading-anchor" href="#disablefinding"><span></span></a>Disable Finding</h2>
 

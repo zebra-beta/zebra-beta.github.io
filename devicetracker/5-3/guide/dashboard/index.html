@@ -335,7 +335,7 @@
 
 <li><strong>Device Model -</strong> Model number of the device.</li>
 
-<li><strong>Last Used By -</strong> Last user that checked in to the device.</li>
+<li><strong>Last Used By -</strong> Last user that checked out the device.</li>
 
 <li><strong>Location -</strong> Device location based on the access point it is connected to.</li>
 
@@ -1565,11 +1565,21 @@ To perform a device search:</p>
 <p>Details for the <strong>To Be Found</strong> and <strong>Found</strong> states additionally include the following:</p>
 
 <ul>
-<li>Breakdown of <strong>automatic vs manual events</strong> based on device state - specifies whether the event was automatically (via <a href="../config/#automation">automation rules</a>) or manually triggered (e.g. user changes states during the finding process), categorized by device state transition</li>
+<li><p>Breakdown of <strong>automatic vs manual events</strong> based on device state - specifies whether the event was automatically (via <a href="../config/#automation">automation rules</a>) or manually triggered (e.g. user changes states during the finding process), categorized by device state transition</p></li>
 
-<li><strong>Average time -</strong> average time elapsed across all devices while they were in the <strong>To Be Found</strong> or <strong>Found</strong> state</li>
+<li><p><strong>Average time -</strong> average time elapsed across all devices based on one of the following device states: </p>
 
-<li><strong>Total time -</strong> total time elapsed across all devices while they were in the <strong>To Be Found</strong> or <strong>Found</strong> state</li>
+<ul>
+<li><strong>To Be Found -</strong> duration of time while the device is in the <strong>To Be Found</strong> state </li>
+
+<li><strong>Found -</strong> duration of time while a device in the <strong>Being Found</strong> state transitions to <strong>Found</strong> state</li></ul></li>
+
+<li><p><strong>Total time -</strong> total time elapsed across all devices based on one of the following device states:</p>
+
+<ul>
+<li><strong>To Be Found -</strong> duration of time while the device is in the <strong>To Be Found</strong> state </li>
+
+<li><strong>Found -</strong> duration of time while a device in the <strong>Being Found</strong> state transitions to <strong>Found</strong> state</li></ul></li>
 </ul>
 
 <p>To view <em>Events By Site:</em></p>
@@ -1693,7 +1703,7 @@ when the [site is registered](../config/#managesites). The end of day summary re
 
 <li><p>Click <strong>Reports</strong> in the left menu and click <strong>End of Day Device Summary.</strong></p></li>
 
-<li><p>In the <strong>Site</strong> dropdown, select the specific site for which to generate the report, or select <strong>All</strong> to generate a report for all sites. <!-- For administrators, in the **Site** dropdown, select the specific site to generate the report for or select **All** to generate a report for all sites. For managers, only the data for their assigned site can be viewed.--></p></li>
+<li><p>In the <strong>Site</strong> dropdown, select the specific site for which to generate the report, or select <strong>All</strong> to generate a report for all sites.</p></li>
 
 <li><p>Select the date to generate the report.</p></li>
 
