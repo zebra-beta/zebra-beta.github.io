@@ -1688,21 +1688,21 @@ c. <strong>IP Address Range Configuration</strong><br>Allow an IP address range 
 
 <h3 id="maximumcheckouttime" class="anchor"><a class="heading-anchor" href="#maximumcheckouttime"><span></span></a>Maximum Checkout Time</h3>
 
-<p><em>(Optional)</em> Enter the maximum time (in hours) for the device to be checked out when <a href="#enablecheckincheckout">Checkin/Checkout</a> is enabled. When the specified time elapses, both the checked-out device user and the amount of time the user is checked out is flagged in red on the device dashboard, providing visibility to the administrator. <em>Maximum Checkout Time</em> is affected by the option <strong><a href="#configureautomationsettings">Automatically Mark Devices "To Be Found"</a></strong> based on the rule that includes "maximum checkout time reached". To automatically force the device to checkin when reaching the <strong>Maximum Checkout Time,</strong> see <a href="#forcecheckin">Force Checkin</a></p>
+<p><em>(Optional)</em> Enter the maximum time (in hours) for the device to be checked out when <a href="#enablecheckincheckout">Checkin/Checkout</a> is enabled. When the specified time elapses, both the checked-out device user name and the amount of time the user is checked out is flagged in red on the device dashboard, providing visibility to the administrator. </p>
+
+<p><em>Maximum Checkout Time</em> is affected by the option <strong><a href="#configureautomationsettings">Automatically Mark Devices "To Be Found"</a></strong> based on the rule that includes "maximum checkout time reached". To automatically force the device to checkin when reaching the <strong>Maximum Checkout Time,</strong> see <a href="#forcecheckin">Force Checkin</a></p>
 
 <p><img alt="image" style="height:350px" src="max-checkout-time.png"></p>
 
 <p><em>Maximum checkout time reached</em></p>
 
-<h3 id="forcecheckin" class="anchor"><a class="heading-anchor" href="#forcecheckin"><span></span></a>Force Checkin</h3>
+<h4 id="forcecheckin" class="anchor"><a class="heading-anchor" href="#forcecheckin"><span></span></a>Force Checkin</h4>
 
-<p><em>(Optional)</em> If <strong>Force Checkin</strong> is enabled, when the specified <strong>Maximum Checkout Time</strong> is reached the device user is automatically checked in. This is useful if the user forgets to checkin the device after the work shift. </p>
+<p><em>(Optional)</em> <strong>Force Checkin</strong> allows the device to automatically checkin when a specified time is reached. If enabled, when the specified <strong>Maximum Checkout Time</strong> is reached the device user is warned with a notification alert that the device will be checked in after the snooze time is elapsed. After the device reaches the snooze time, it is automatically checked in. This is useful if the user forgets to checkin the device after the work shift. It is required for <strong><a href="#snoozetime">Snooze Time</a></strong> to be specified.</p>
 
-<p>If <strong><a href="#snoozetime">Snooze Time</a></strong> is enabled, the user is given a warning that the checkin will take place after the specified <strong>Snooze Time.</strong></p>
+<h5 id="snoozetime" class="anchor"><a class="heading-anchor" href="#snoozetime"><span></span></a>Snooze Time</h5>
 
-<h3 id="snoozetime" class="anchor"><a class="heading-anchor" href="#snoozetime"><span></span></a>Snooze Time</h3>
-
-<p><em>(Optional)</em> Specifies the amount of time (in minutes) to extend the <strong>Maximum Checkout Time.</strong> The device user receives a notification of the snooze time when the <strong>Maximum Checkout Time</strong> is reached. By extending the checkout time, this allows the user extra time to complete their task when the <strong>Maximum Checkout Time</strong> is reached.</p>
+<p><strong>Snooze Time</strong> specifies the amount of time (in minutes) to extend the <strong>Maximum Checkout Time.</strong> This is mandatory if <strong>Force Checkin</strong> is enabled. When the <strong>Maximum Checkout Time</strong> is reached, an alert notification is sent to the device warning the user that the device will be checked in after the specified snooze time elapses. This allows the user extra time to complete their task when the <strong>Maximum Checkout Time</strong> is reached.</p>
 
 <h3 id="devicecheckinoptions" class="anchor"><a class="heading-anchor" href="#devicecheckinoptions"><span></span></a>Device Checkin Options</h3>
 
