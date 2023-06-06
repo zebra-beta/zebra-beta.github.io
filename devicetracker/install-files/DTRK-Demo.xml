@@ -1,0 +1,57 @@
+﻿<wap-provisioningdoc>
+  <characteristic version="10.1" type="FileMgr">
+    <parm name="FileAction" value="1" />
+    <characteristic type="file-details">
+      <parm name="TargetAccessMethod" value="2" />
+      <parm name="TargetPathAndFileName" value="/sdcard/DeviceTracker.apk" />
+      <parm name="IfDuplicate" value="1" />
+      <parm name="SourceAccessMethod" value="1" />
+      <parm name="SourceURI" value="&amp;#1272&amp;#127ieQ2gNWKYw1DKtiFVBGj9jg8sPYB9hexGiU6X4qE/yEX8Y1Sq7FZzRT0ME70eP0Qh3UrtevbJiWjFUVb3obDoLF5qqTdABesFC/HEYjriVKlQAiulkj+Dvm1Iz9kZBJo2QAUvWWrSJjL5YfBpZjYHSVWkp/vq5GyxXkHx3PxCisamw4iwkJySDMCLqpcwwyPuuAF36JACxqElDRtbtkrvsF2Ho7OrIyqbYVtXYCC9y64ddACXSOUr+VsLNboTBmOekHe7zLYWoFrBa3DTcKrMFEzwarkJBv8yqGr354J0mx5ttDWpmmVyjgl2Q+TW4hX//v8KUQHIaYgbShoXEFfiA==" />
+    </characteristic>
+  </characteristic>
+  <characteristic version="9.3" type="AppMgr">
+    <parm name="Action" value="Install" />
+    <parm name="APK" value="/sdcard/DeviceTracker.apk" />
+  </characteristic>
+  <characteristic version="9.3" type="AppMgr">
+    <parm name="Action" value="BatteryOptimization" />
+    <parm name="RemovePackageNames" value="com.zebra.mdna.devicetrackercloud" />
+  </characteristic>
+  <characteristic version="10.1" type="AccessMgr">
+    <parm name="PermissionAccessAction" value="1" />
+    <parm name="PermissionAccessPermissionName" value="android.permission.SYSTEM_ALERT_WINDOW" />
+    <parm name="PermissionAccessPackageName" value="com.zebra.mdna.devicetrackercloud" />
+    <parm name="PermissionAccessSignature" value="MIIDEzCCAfsCCQCF8yCaHcyLBjANBgkqhkiG9w0BAQsFADCBkzELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAk5ZMRMwEQYDVQQHDApIb2x0c3ZpbGxlMRswGQYDVQQKDBJaZWJyYSBUZWNobm9sb2dpZXMxJDAiBgNVBAsMG0VudGVycHJpc2UgTW9iaWxlIENvbXB1dGluZzEfMB0GA1UEAwwWQW5kcm9pZCBQbHVnLUluIENTUCBDQTAeFw0yMTA3MjkxNDQ5MDFaFw00NjA3MjMxNDQ5MDFaMIGGMQswCQYDVQQGEwJVUzELMAkGA1UECAwCTlkxEzARBgNVBAcMCkhvbHRzdmlsbGUxGzAZBgNVBAoMElplYnJhIFRlY2hub2xvZ2llczEMMAoGA1UECwwDRU1DMSowKAYDVQQDDCFjb20uemVicmEubWRuYS5kZXZpY2V0cmFja2VyY2xvdWQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALZ2rQNxRITMvirEPSD22qQyij4OZWCEtHOhaHfvdJ6fFJJjmh0PWQDyVG3S6kcmEffYDt5/nCwxa/1h2HT41IWjJEoMogg6+/XIXtyG4ggxyGVun9y1muNor1WvM+hCeI/6w/1rImWK1m6tLB3nZPQo9rcTRrLSepQxkRPS83QrAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAEgm9Qju8Rkm27PdE3UKhhyY02QdFtkvdTLNG8efWKtow4DyFoxkvIIC74+7S5D+p04D+Glb3T0zZTB0q6krvbuZXCYM+ZETg8BTiEouhamJd5DXtdtI3lCsyzoCHRzR4KZnWEXdBfusJh6rCWLFDkOU65t1gPP7NxSD7vkRaDbiP/uCsRlIHYm7LqaWXTeHweHFfKnmUqzN5M8up1eOXYquVfuJ+Med5mIPE9MYtQ0cS5jqhaWFKY/6s5VwjyGgaPCBlHJH4/kznyLrgRhPozfPstZMEH11UIBXgm8Pov6DHOBbQWN7Qn0w9BNN3KoptX+M9RtZ1DUx9WBhuqcgWYM=" />
+  </characteristic>
+  <characteristic version="10.2" type="Intent">
+    <parm name="Action" value="StartService" />
+    <parm name="ActionName" value="com.zebra.mdna.devicetrackercloud.csp.NGDTCspService" />
+    <parm name="Package" value="com.zebra.mdna.devicetrackercloud" />
+    <parm name="Class" value="com.zebra.mdna.devicetrackercloud.csp.NGDTCspService" />
+  </characteristic>
+  <characteristic version="6.0" type="ConditionMgr">
+    <parm name="DataType" value="1" />
+    <characteristic type="BooleanDetails">
+      <parm name="BooleanSourceType" value="2" />
+      <parm name="BooleanSystemValue" value="2" />
+    </characteristic>
+    <parm name="ConditionMetAction" value="2" />
+    <parm name="ConditionNotMetAction" value="2" />
+    <parm name="ConditionRepeatCount" value="5" />
+    <parm name="ConditionRepeatInterval" value="1" />
+    <parm name="ConditionFailMessage" value="5" />
+    <parm name="SuppressMessage" value="1" />
+    <parm name="ConditionWaitMessage" value="" />
+  </characteristic>
+  <characteristic version="3.0" type="com.zebra.mdna.devicetrackercloud">
+    <parm name="ShowServerSettings" value="1" />
+    <characteristic type="project">
+      <parm name="ProjectId" value="zdtrk-apac-dm-p" />
+      <parm name="AppId" value="&amp;#1272&amp;#127VYtg9Pc82aO3GdunasH0AgM8M0/do0LdODjasbhZsEyhsLIY6h20TdinlUKjxS2n2Ut0tXNLuJA5a3adSBh54Rkdr51E5le22oSYCvZQjvbwFVZigata9BuK6ZgCwhBPJ1FCmyc/c3O0ZlSSmsTpk2Un/A2kGaiKjzUICRfIRrSS5QX/z/7SlnH9HFORg39P4Xu2HxaIoEWxKD6nWXPbU4eXrk2dLvyMo6RLNoUJbCxft+5ih4w6liWEVH2uExEoryVaW8TTqpLDDutkNtwx2kGhQIOc2tpO4jAXnxqhOQd71yfk0QO3+xplhipVbUfcsin7l0lco8PivHrIH+r/lQ==" />
+      <parm name="ApiKey" value="&amp;#1272&amp;#127BSeWEPGOvupaHkIGiXt3wADpqDFcA9oW73zn79HrENmsoRugib0j6LW4colMzeCOAW+c0/GiaGjzUBk91uW6xaNUG5DnZJA/S5Lln6GlEsPX4Ma5dc4YuHXCSswyK1r4uDoLjT/Ad5Ty7WccmNmhF7DrGGJT5mp55mt8J6P+fIY6bE/entco7zQ2j0G8PJRo926V5YGunQzFs6DnJsy9f9GQLxIx5MSKpfewAlPTk5IAsQOW/IXmAmztgwC80ZMxEoXwPAonDeHQ0xD0BclXDaxwwLjcb5L4YxkukwvK0wYG7fAmyptZMMhNtz8diBeAE35pABp5l15ERHbpgD1zsg==" />
+      <parm name="FirebaseUrl" value="&amp;#1272&amp;#127ZKWtolQWjwix/fIeFGfmYB/GPJR36NEAZEFEKmaxHito4m0nMAWP5RfKSasmESy7uzzmLBZqVL2YquoSJj1iO0EIeGfMCtsyHIL32er0VNG9+ObMPTZdDvdDVaNyhrPRyCsCvnZPHne4Jqs9H8NwBP3bhHxIEDFAu6TZHTKIvz0DIm5U9ju4wyQrfy0GgKw4e3Z1pzOoc1E5X66cg4R+zkpSsMb9bY00dmX4F1v3yIR5rjPuT5uJchaaQx0I1DPoFryTN++X/GA6Y5RStnPGsLYNNza1uBbmg57fAUVprF9juIJ2UD8tJ+Q/kk6Ju2L2q+yxY9TaJO6tH/2CxgjYjQ==" />
+      <parm name="CustomerId" value="&amp;#1272&amp;#127DBFluedzdDB1DtX5n+m8w0JJ5LrjtsaEfC5s0zvnIVk3YgKuuLFYoBzAzhzXMJ15AuQP+iZkrAqjDahMOLI+aJKuzMVE5RdG9IHfCXh/Fr7vAAx2LC+yfdSK6C3U1cevgNs16Zv3Qk8pSotjke60RCHQdQisB0vMuxtRHLBBiUavedcvgu6fCPtX/aToiUaqGhPU6XMatrh0Jkq49JNorY+yBu4PlcPT95UqI+MULBrr4loWacg736e0i1FUbTGtAIwnOoGZlRnu1D8Dte3iEbR0vw0dYEiiZT3RElYrJGCFdV0WoWIr9z/bEhJweNwUX/b7lUsQE1XnNH1lx2fs5w==" />
+      <parm name="Sid" value="&amp;#1272&amp;#127ndqzkpFiEo4IuW4HLMKNQjoiNSYTYx7vdV2JrL0aSfzS8dlB9hfjWWJQQFx19gSL5gNIvdEwFcpd7+3mtI60/6U3cZ60s/g9GiUt03m0PCppywllzQKFUTdkWule350VkosPMFuLw85lPfqnEGEiQ7K9YEHImmn1Z5sROMrP6oFz5/bzj33iwfPLomAvCv8zG7qyTGhk28AmYkhcuKmwWWumxWVX0D8sgNXVKakdzQzpF1OZnq4dOp1/8A+VhOW3iDDSA9LzJncXwSaVI6CKfIOsL++AqCZV6bcFyAxck2NAymx9rv64raeCjashy5desMNE8WHVGA3uXdkX1RM/jw==" />
+    </characteristic>
+  </characteristic>
+</wap-provisioningdoc>
