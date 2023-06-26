@@ -32,7 +32,17 @@
       <script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script> 
     -->
     <link rel="shortcut icon" href="/favicon.ico">
-<script src="/js/jquery.js"></script></head><!--/head-->
+<script src="/js/jquery.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-01QJCMQM9N"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-01QJCMQM9N');
+</script></head><!--/head-->
+
+
+<!-- Google tag -->
+
 
 
 <body id="home" class="homepage" data-spy="scroll" data-offset="100" data-target="#toc">
@@ -197,107 +207,35 @@
 
 <hr>
 
-<!-- NOTE: ALL LINKS REMOVED -->
-
-<h2 id="mainfeatures" class="anchor"><a class="heading-anchor" href="#mainfeatures"><span></span></a>Main Features</h2>
-
-<p>Main features of Device Tracker:</p>
-
-<ul>
-<li>Cloud-based scalable solution hosted and maintained by Zebra with support for up to 100K devices in multiple locations.</li>
-
-<li>Support for central administrator, site manager, and site associate roles.</li>
-
-<li>The web portal provides a corporate-level dashboard for administrators and site-level dashboard for managers to monitor and track devices.</li>
-
-<li>Registration of:
-
-
-<ul>
-<li>Sites and access points with friendly names to easily identify device location.</li>
-
-<li>Devices to assigned site with user friendly names for simple device identification.</li></ul>
-</li>
-
-<li>Simple to deploy – install and configure the mobile application using StageNow and Enterprise Mobility Management tools.</li>
-
-<li>Easily find a misplaced device with the connected AP location, the Bluetooth-based visual proximity indicator and play sound feature.</li>
-
-<li>Locate a device even when that device is powered off (for a limited time) if it has secondary Bluetooth Low Energy (BLE) beaconing capability.</li>
-
-<li>Checkout feature to associate users to devices for accountability.</li>
-
-<li>Single Sign On (SSO) support for users to be authenticated with SSO credentials.</li>
-
-<li>Generate reports to monitor device performance, user activity and site activity.</li>
-
-<li>Automate workflows to ease the process of finding and tracking devices.</li>
-
-<li>Automatically receive notifications from lost devices in close proximity via audio, vibrating or LED alerts.</li>
-</ul>
-
-<!-- 
----
-
-## New in Device Tracker 5.2 (Demo)
-
-- New **Lost Device Nearby** feature automatically sends notification messages (with audio, vibrating, or LED alerts) to any device located in close proximity of a lost device.
--->
-
-<hr>
-
-<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
-
-<h3 id="newindevicetracker51" class="anchor"><a class="heading-anchor" href="#newindevicetracker51"><span></span></a>New in Device Tracker 5.1</h3>
-
-<ul>
-<li>The web portal now provides a <strong>dashboard for administrators</strong> and <strong>managers</strong> to monitor and track devices.</li>
-
-<li>Administrators can now <strong>manage devices</strong>, <strong>access points</strong> and <strong>sites</strong> through the web portal either manually or by uploading the data via .CSV file.</li>
-
-<li>New <strong>Single Sign On</strong> (SSO) OAuth 2.0 support.</li>
-
-<li>Add SSO users for admin or manager access to the web portal through <strong>Manage Users</strong>.</li>
-
-<li>New reporting features:
-
-
-<ul>
-<li><strong>Site Data Report</strong> - generate reports on demand showing daily device event counts based on site.</li>
-
-<li><strong>End of Day Report</strong> - generate a snapshot report showing device summary and checked out devices at the end of the day with the option to email the report to recipients.</li></ul>
-</li>
-
-<li>New capability to assign a manager to a site when creating a <strong>new user</strong>.</li>
-
-<li><em>Limitation:</em> If upgrading from Device Tracker 5.0 or lower, sites imported via .CSV file on the device must be updated with the local <strong>time zone</strong> information in order for the new <strong>data reporting</strong> features to work.</li>
-
-<li><em>Deprecated Feature:</em> .CSV file import through the device client app for device, access point and site registration is deprecated. Starting with v5.1, Zebra recommends to import the .CSV file through the web portal.</li>
-</ul>
-
-<h3 id="newindevicetracker50" class="anchor"><a class="heading-anchor" href="#newindevicetracker50"><span></span></a>New in Device Tracker 5.0</h3>
-
-<ul>
-<li>New <strong>workflow automation</strong> to automate the process of finding lost mobile devices based on rules and thresholds configured.</li>
-
-<li>Now automatically assign a device to a known site based on its connected access point (AP) with <strong>automatic device registration</strong>.</li>
-
-<li>New <strong>Device Checkin Options</strong> to select the method of checkin: manual, cradle, or reboot.</li>
-
-<li>New capability to play an audio alert if <strong>Do Not Disturb (DND)</strong> is enabled on the lost device being tracked.</li>
-</ul>
-
-<hr>
-
 <h2 id="getstarted" class="anchor"><a class="heading-anchor" href="#getstarted"><span></span></a>Get Started</h2>
 
-<p>Contact David Singer for access to the demo system. Device and network <a href="https://techdocs.zebra.com/devicetracker/latest/guide/setup/#requirements">requirements</a> must be met prior to installation. The [ProjectID] for the network requirements is: <code>emc-zdtrk-early-demo-t</code>. See <a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/device-tracker.html">Device Tracker Download &amp; Support</a> for device compatibility.</p>
+<p>There are individual demo instances based on region: NA, EMEA, and APAC. Contact the appropriate individual to access to the demo system based on your region: </p>
+
+<ul>
+<li>For NA, contact David Singer </li>
+
+<li>For EMEA, contact Ian Hatton</li>
+
+<li>For APAC, contact Daniel Park</li>
+</ul>
+
+<p>Device and network <a href="https://techdocs.zebra.com/devicetracker/latest/guide/setup/#requirements">requirements</a> must be met prior to installation. The [ProjectID] for the network requirements vary based on region: </p>
+
+<ul>
+<li>For NA: <code>emc-zdtrk-early-demo-t</code></li>
+
+<li>For EMEA: <code>zdtrk-emea01-dm-p</code></li>
+
+<li>For APAC: <code>zdtrk-apac-dm-p</code></li>
+</ul>
+
+<p>See <a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/device-tracker.html">Device Tracker Download &amp; Support</a> for device compatibility.</p>
 
 <h3 id="resetpassword" class="anchor"><a class="heading-anchor" href="#resetpassword"><span></span></a>Reset Password</h3>
 
 <p>The password must be reset for first-time use. Your Zebra email ID is used for the user name. </p>
 
-<p>See <a href="http://zebra-stage.github.io/devicetracker/5-2/guide/config/#resetpassword">Reset Password</a> for instructions.</p>
+<p>See <a href="https://techdocs.zebra.com/devicetracker/latest/guide/config/#resetpassword">Reset Password</a> for instructions.</p>
 
 <!-- 
 
@@ -312,17 +250,35 @@ To install and configure Device Tracker on the device:
 See [Device Tracker device compatibility](https://www.zebra.com/us/en/support-downloads/software/productivity-apps/device-tracker.html).
 -->
 
-<h3 id="installsetup" class="anchor"><a class="heading-anchor" href="#installsetup"><span></span></a>Install &amp; Setup</h3>
+<hr>
+
+<h2 id="installsetup" class="anchor"><a class="heading-anchor" href="#installsetup"><span></span></a>Install &amp; Setup</h2>
 
 <p>To install and configure Device Tracker client app:</p>
 
 <ol>
-<li>Connect the device to the internet via Wi-Fi.</li>
+<li><p><strong>Connect the device</strong> to the internet via Wi-Fi.</p></li>
 
-<li>Launch the StageNow client.</li>
+<li><p><strong>Launch the StageNow client.</strong></p></li>
 
-<li><strong>Scan the barcode</strong> provided <a href="./DeviceTrackerDemoInstall.pdf">here</a>. The screen below appears while the server configuration is taking place (may take more than 10 seconds to complete) followed by the Checkout screen blocking device access. This confirms the server connection is established and the client app is ready for use. 
-<table>
+<li><p><strong>Scan the appropriate barcode</strong> based on region:</p>
+
+<ul>
+<li>For NA, scan <a href="./DeviceTrackerDemoInstall.pdf">barcode</a>. </li>
+
+<li>For EMEA, scan <a href="../../../install-files/EMEA-DTRK-Demo.pdf">barcode</a>.</li>
+
+<li>For APAC, scan <a href="../../../install-files/APAC-DTRK-Demo.pdf">barcode</a>.</li></ul>
+
+<p>This performs the following:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Download and install Device Tracker<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Disable battery optimization<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Grant the required permissions to run Device Tracker<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Start the Device Tracker service<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5. Configure the server connectivity settings to communicate with the respective cloud server (based on region)</p></li>
+
+<li><p>The screen below appears while the server configuration is taking place (may take more than 10 seconds to complete) followed by the Checkout screen blocking device access. This confirms the server connection is established and the client app is ready for use. 
+</p><table>
     <tbody><tr>
         <td>
             <img alt="image" style="height:350px" src="server-config-setup.png">
@@ -338,34 +294,40 @@ See [Device Tracker device compatibility](https://www.zebra.com/us/en/support-do
         <td>&nbsp; &nbsp; &nbsp;</td>
         <td><i>Checkout block access screen.</i></td>
     </tr>
-</tbody></table></li>
+</tbody></table><p></p></li>
 
-<li><strong>Scan any barcode</strong> to remove the Checkout screen. Checkin/checkout is enabled for the demo. The checkout screen appears each time the device is connected to external power.</li>
+<li><p><strong>Scan any barcode</strong> to remove the Checkout screen. Checkin/checkout is enabled for the demo. The checkout screen appears each time the device is connected to external power.</p></li>
 
-<li><strong>Login.</strong> Tap on the options menu at the top-right and select <strong>Admin/Manager Login.</strong> Enter your user credentials.</li>
+<li><p><strong>Login.</strong> Tap on the options menu at the top-right and select <strong>Admin/Manager Login.</strong> Enter your user credentials.</p></li>
 
-<li><strong>Register your devices and access points.</strong> <em>This feature is available only in the Demo instance</em> as an alternative to CSV upload or manual entry:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. <strong>Enter your site name.</strong> This must match the site name assigned to you for demo use.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. <strong>Optionally, provide a friendly name for each device.</strong> For example, “Ken’s Device”.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. <strong>Provide the location friendly name for each access point MAC address</strong> used for the Wi-Fi connection. For example, “Electronics” as a friendly name for the access point near the Electronics department. To register friendly names for multiple access points, go to each access point area for the device to connect, click on refresh and register the friendly name.
-<table>
-    <tbody><tr>
-        <td>
-            <img alt="image" style="height:350px" src="register-option.png">
-        </td> 
-        <td> &nbsp; &nbsp; &nbsp;
-        </td>
-        <td>
-            <img alt="image" style="height:350px" src="register.png">
-        </td>
-    </tr>
-    <tr>
-        <td><i>Tap <b>Set Site, Device &amp; AP</b></i></td> 
-        <td>&nbsp; &nbsp; &nbsp;</td>
-        <td><i>Enter device name (optional), site, and AP friendly name</i></td>
-    </tr>
-</tbody></table></li>
+<li><p><strong><a href="https://techdocs.zebra.com/devicetracker/latest/guide/config/#managedevices">Register your devices.</a></strong></p></li>
+
+<li><p><strong><a href="https://techdocs.zebra.com/devicetracker/latest/guide/config/#manageaccesspoints">Register your access points.</a></strong> </p></li>
 </ol>
+
+<!-- 
+_This feature is available only in the Demo instance_ as an alternative to CSV upload or manual entry:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. **Enter your site name.** This must match the site name assigned to you for demo use.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. **Optionally, provide a friendly name for each device.** For example, “Ken’s Device”.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. **Provide the location friendly name for each access point MAC address** used for the Wi-Fi connection. For example, “Electronics” as a friendly name for the access point near the Electronics department. To register friendly names for multiple access points, go to each access point area for the device to connect, click on refresh and register the friendly name.
+    <table>
+        <tr>
+            <td>
+                <img alt="image" style="height:350px" src="register-option.png"/>
+            </td> 
+            <td> &nbsp; &nbsp; &nbsp;
+            </td>
+            <td>
+                <img alt="image" style="height:350px" src="register.png"/>
+            </td>
+        </tr>
+        <tr>
+            <td><i>Tap <b>Set Site, Device & AP</b></i></td> 
+            <td>&nbsp; &nbsp; &nbsp;</td>
+            <td><i>Enter device name (optional), site, and AP friendly name</i></td>
+        </tr>
+    </table>
+-->
 
 <hr>
 
@@ -386,15 +348,7 @@ Fill out the form below to provide your feedback:
 <iframe width="900" height="600" src="https://app.smartsheet.com/b/form/24fb10e4d73a4cdcb66edc7ed7454846"></iframe>
 
 
----
 
-## See Also
-
-- [Licensing](../license)
-- [Install & Setup](../setup)
-- [Secondary BLE](../secondaryble)
-- [Configuration](../config)
-- [Track Devices](../use)
 --><p></p>
                                         
 
@@ -429,7 +383,7 @@ Fill out the form below to provide your feedback:
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                     <div class="col-sm-2">
                         <!--
